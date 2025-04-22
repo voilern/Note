@@ -4,33 +4,117 @@ site_author: voilern
 site_description: voilern's Notebook
 repo_url: https://github.com/voilern/Note/
 repo_name: voilern/Note
-copyright: Copyright &copy; voilern
+copyright: Copyright &copy; 2025 voilern
 
 theme:
   name: material
-  language: en
+  language: zh
+  text: LXGW WenKai Screen
+  code: CodeNewRoman Nerd Font Mono
 
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  
   features:
     - navigation.indexes
     - navigation.tracking
     - navigation.tabs
+    - navigation.top
     - content.code.copy
     - content.code.select
-
+    - search.suggest
+    - search.highlight
 
 markdown_extensions:
-  - admonition
+  - abbr
   - attr_list
+  - admonition
+  - def_list
+  - footnotes
   - md_in_html
-  - pymdownx.arithmatex:
-      generic: true
+  # - meta # 支持Markdown文件上方自定义标题标签等
+  - pymdownx.caret
+  - pymdownx.betterem
+  - pymdownx.critic
   - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format:
+            !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
+  - pymdownx.arithmatex: # latex支持
+      generic: true
+  - toc:
+      permalink: true # 固定标题位置为当前位置
+  - pymdownx.highlight: # 代码块高亮
+      anchor_linenums: true
+      linenums: true # 显示行号
+      # auto_title: true # 显示编程语言名称
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-      options:
-        custom_icons:
-          - overrides/.icons
-  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra:
+  generator: true
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/voilern
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/403057961
+    - icon: fontawesome/solid/envelope
+      link: mailto:<hejiayi@zju.edu.cn>
+
+extra_css:
+  - stylesheets/css/card.css
+  - stylesheets/css/flink.css
+  - stylesheets/css/extra.css
+  # - stylesheets/css/rounded_corner.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
+  - https://static.zeoseven.com/zsft/292/main/result.css
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css
+  # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Computer Science:
+    - 程序设计与算法基础: 
+      - ComputerScience\Fundamentals_of_Programming_and_Algorithms\index.md
+    - 数据结构基础: 
+      - ComputerScience/Fundamentals_of_Data_Structure/index.md
