@@ -115,6 +115,6 @@ nav:
   - Home: index.md
   - Computer Science:
     - 程序设计与算法基础: 
-      - ComputerScience\Fundamentals_of_Programming_and_Algorithms\index.md
+      - ComputerScience/Fundamentals_of_Programming_and_Algorithms/index.md
     - 数据结构基础: 
       - ComputerScience/Fundamentals_of_Data_Structure/index.md
