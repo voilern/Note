@@ -1,0 +1,36 @@
+site_name: voilern's Notebook
+site_url: https://voilern.github.io/Note/
+site_author: voilern
+site_description: voilern's Notebook
+repo_url: https://github.com/voilern/Note/
+repo_name: voilern/Note
+copyright: Copyright &copy; voilern
+
+theme:
+  name: material
+  language: en
+
+  features:
+    - navigation.indexes
+    - navigation.tracking
+    - navigation.tabs
+    - content.code.copy
+    - content.code.select
+
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
