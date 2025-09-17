@@ -110,6 +110,14 @@ extra_javascript:
 
 plugins:
   - search
+  - statistics
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      enable_creation_date: true
+      exclude:
+        - index.md
+  - glightbox
 
 nav:
   - Home: index.md
@@ -140,4 +148,5 @@ nav:
       - ComputerScience/CS106L/index.md
       - ComputerScience/CS106L/lec1.md
       - ComputerScience/CS106L/lec2.md
+      - ComputerScience/CS106L/lec3.md
   # - Others: Others/index.md
