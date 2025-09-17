@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="zh" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -26,7 +23,7 @@
     
     
       
-        <title>Lecture 1 | AVL Trees & Splay Trees - voilern's Notebook</title>
+        <title>Lecture 1 | AVL Trees &amp; Splay Trees - voilern's Notebook</title>
       
     
     
@@ -47,7 +44,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -69,7 +66,17 @@
     
     
     
-  </head>
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -102,15 +109,15 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="voilern&#39;s Notebook" class="md-header__button md-logo" aria-label="voilern's Notebook" data-md-component="logo">
+    <a href="../../.." title="voilern's Notebook" class="md-header__button md-logo" aria-label="voilern's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -135,20 +142,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
       </label>
     
   
@@ -164,7 +171,7 @@
       
         <label class="md-header__button md-icon" for="__search">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         </label>
         <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -173,15 +180,15 @@
       <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="查找">
         
         <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -207,7 +214,7 @@
         <a href="https://github.com/voilern/Note/" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     voilern/Note
@@ -295,7 +302,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -306,10 +313,10 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="voilern&#39;s Notebook" class="md-nav__button md-logo" aria-label="voilern's Notebook" data-md-component="logo">
+    <a href="../../.." title="voilern's Notebook" class="md-nav__button md-logo" aria-label="voilern's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     voilern's Notebook
@@ -319,7 +326,7 @@
       <a href="https://github.com/voilern/Note/" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
   </div>
   <div class="md-source__repository">
     voilern/Note
@@ -431,7 +438,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
         
           
           <div class="md-nav__link md-nav__container">
@@ -490,7 +497,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1248,6 +1255,8 @@
       
         
       
+        
+      
     
     
     
@@ -1259,7 +1268,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1337,6 +1346,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS106L/lec3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lecture 3: Initialization &amp; References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1360,7 +1392,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1595,14 +1627,17 @@
   
 
 
-<h1 id="lecture-1-avl-trees-splay-trees">Lecture 1 | AVL Trees &amp; Splay Trees<a class="headerlink" href="#lecture-1-avl-trees-splay-trees" title="Permanent link">&para;</a></h1>
+<h1 id="lecture-1-avl-trees-splay-trees">Lecture 1 | AVL Trees &amp; Splay Trees<a class="headerlink" href="#lecture-1-avl-trees-splay-trees" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 7130 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 8 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 24 分钟</p>
+</div>
 <div class="admonition info">
 <p class="admonition-title">说明</p>
 <p>原先安排在这一章节的摊还分析现在被迁移到了这个地方：<a href="../Ex01/">Topic 1 | Amortized Analysis</a>。</p>
 <div class="admonition tip">
 <p class="admonition-title">阅读技巧</p>
 <p>因为没法在这里用代码写动画，所以我用 <a href="https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/?h=%3D%3D%3D#tabbed">Tab</a> 模拟了一下动画帧，可以手动切换这些标签来动态观察。一般这种内容的 Tab 标题都会是 <code>Frame {}</code>。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Frame 1</label><label for="__tabbed_1_2">Frame 2</label><label for="__tabbed_1_3">Frame 3</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Frame 1</label><label for="__tabbed_1_2">Frame 2</label><label for="__tabbed_1_3">Frame 3</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Like</p>
@@ -1617,8 +1652,8 @@
 </div>
 </div>
 </div>
-<h2 id="avl">AVL 树<a class="headerlink" href="#avl" title="Permanent link">&para;</a></h2>
-<h3 id="_1">概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="avl">AVL 树<a class="headerlink" href="#avl" title="Permanent link">¶</a></h2>
+<h3 id="_1">概念<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <div class="admonition quote">
 <p class="admonition-title">link</p>
 <p>OI Wiki: https://oi-wiki.org/ds/avl/</p>
@@ -1633,8 +1668,8 @@
 <p>说的通俗一些，就是树的层数。</p>
 </blockquote>
 </div>
-<hr />
-<h4 id="avl_1">AVL 树<a class="headerlink" href="#avl_1" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="avl_1">AVL 树<a class="headerlink" href="#avl_1" title="Permanent link">¶</a></h4>
 <p>而 AVL Tree 是一种<strong>平衡(balanced)</strong>的二叉搜索树，通过「高度」这个量，定义了「平衡」这件事。</p>
 <div class="admonition definition">
 <p class="admonition-title">AVL Tree</p>
@@ -1699,8 +1734,8 @@ F_i = \left\{
 \]</div>
 <p>而 <span class="arithmatex">\(n_h + 1 \approx F_{h+2}\)</span>，所以 <span class="arithmatex">\(h \approx \log{(n_h)}\)</span>，也就是说 <span class="arithmatex">\(h \approx \log{N}\)</span>。</p>
 </div>
-<hr />
-<h4 id="_2">视角<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="_2">视角<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
 <p>而我们谈论 AVL 树时，我们希望以一个动态的视角来谈论 AVL 树，即讨论：某一棵树是否是 AVL 树；在某个操作后，它是否仍然是 AVL 树；若原先是，而经过操作后不再是，那要如何将它重新变为 AVL 树。</p>
 <p>以上三个步骤是简化后的建模，它成为我们解决其他问题的最小单元和基础。</p>
 <p>所以在这种模型下，我们需要定义两个东西：</p>
@@ -1708,7 +1743,7 @@ F_i = \left\{
 <p class="admonition-title">Trouble Maker &amp; Trouble Finder</p>
 <p>以 🌰 来说明。</p>
 <div class="admonition note">
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Frame 1</label><label for="__tabbed_2_2">Frame 2</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Frame 1</label><label for="__tabbed_2_2">Frame 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>下图为一个 AVL 树：</p>
@@ -1745,8 +1780,8 @@ E === NULL</code></pre>
 </div>
 <p>形象地描述这件事就是，在动态插入 <code>5</code> 这个过程中，出现了一个 "Trouble"，导致这个树不再是 AVL 树，而 <code>5</code> 是这个 "Trouble" 的 "Maker"，<code>8</code> 是 "Finder"。</p>
 </div>
-<hr />
-<h3 id="_3">操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="_3">操作<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <p>本小节所需要讲的内容就是<strong><a href="#视角">#视角</a></strong>中提到的“重新变为 AVL 树”这一视角，也就是 AVL 树的维护。</p>
 <p>首先， 我们需要对 AVL 树的破坏情况进行分类，根据 "Trouble Finder"、"Related Trouble Finder's Child"、"Trouble Maker"这三个点的相对关系，分为 <code>LL</code>、<code>RR</code>、<code>LR</code>、<code>RL</code> 四种：</p>
 <div class="admonition note">
@@ -1754,7 +1789,7 @@ E === NULL</code></pre>
 <p>同心圆表示这个点是需要我们在后续操作中关注的。</p>
 <p>此外，虽然实际情况下可能出现多个 Trouble Finder，但是我们只关注<strong>以「距离案发现场最近的 Trouble Finder」为根的孩子树</strong>（这句话非常重要）。</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">LL</label><label for="__tabbed_3_2">RR</label><label for="__tabbed_3_3">LR</label><label for="__tabbed_3_4">RL</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">LL</label><label for="__tabbed_3_2">RR</label><label for="__tabbed_3_3">LR</label><label for="__tabbed_3_4">RL</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <pre class="mermaid"><code>flowchart TD
@@ -1845,14 +1880,14 @@ E === NULL</code></pre>
 <p>稍作解释，例如 <code>LR</code>，表示的是 Trouble Maker 在 Trouble Finder 的 L 孩子节点的 R 孩子树中。</p>
 <p>另外，对于我只在 <code>LR</code> 和 <code>RL</code> 中着重二级孩子节点，并不是笔误。之后会详细介绍。</p>
 </div>
-<hr />
-<h4 id="ll-rr">LL &amp; RR<a class="headerlink" href="#ll-rr" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="ll-rr">LL &amp; RR<a class="headerlink" href="#ll-rr" title="Permanent link">¶</a></h4>
 <div class="admonition tip">
 <p class="admonition-title">废话</p>
 <p>大部分教材都倾向于继续用“旋转”来概括这些方法，确实其实从抽象角度来讲至少 <code>LL</code> 和 <code>RR</code> 部分也还是像的，但是我觉得这并不利于记忆和理解这个过程，尤其是对于 <code>LR</code> 和 <code>RL</code> 的部分。</p>
 <p>所以在 <code>LL</code> 和 <code>RR</code> 部分，我还是会先介绍一下比较传统的，用“旋转”的方式来理解，之后我将尝试着用我自己的思路来讲。</p>
 </div>
-<h5 id="_4">“旋转”视角<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h5>
+<h5 id="_4">“旋转”视角<a class="headerlink" href="#_4" title="Permanent link">¶</a></h5>
 <p><code>LL</code> 和 <code>RR</code> 这两种情况相对直观。由于它们的操作是对称的，所以我这里以 <code>LL</code> 为例。</p>
 <pre class="mermaid"><code>    flowchart TD
         A((("Trouble\nFinder")))
@@ -1892,7 +1927,7 @@ E === NULL</code></pre>
 <p>在 Frame 2 和 Frame 3 之间添加的细线是为了表示这里 L Right Subtree 的转移方法，让 2 ~ 3 帧的“旋转”过程中更加清晰。</p>
 <p>此外，这里要素的命名都是基于 Frame 1 的，对于 Frame 4 来说 L Right Subtree 显然已经不是 L Right Subtree 了。</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Frame 1</label><label for="__tabbed_4_2">Frame 2</label><label for="__tabbed_4_3">Frame 3</label><label for="__tabbed_4_4">Frame 4</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><input id="__tabbed_4_4" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Frame 1</label><label for="__tabbed_4_2">Frame 2</label><label for="__tabbed_4_3">Frame 3</label><label for="__tabbed_4_4">Frame 4</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <pre class="mermaid"><code>    flowchart TD
@@ -1964,7 +1999,7 @@ E === NULL</code></pre>
 <p>我个人认为主要有两个维度，一是保持二叉搜索树的性质，二是保持平衡的性质，我的证明内容折叠起来了，建议读者可以先自己思考一下再展开看看我的想法。</p>
 <details class="proof">
 <summary>二叉搜索树性质的保持</summary>
-<p><img align="right" alt="" src="../img/1.png" width="30%" /></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/1.png" data-desc-position="bottom"><img align="right" alt="" src="../img/1.png" width="30%"></a></p>
 <p>不知道读者是否发现，对于一个排列得当的二叉搜索树，如果我从左到右，使用一条竖直的扫描线扫描整个树，将会得到一个单调序列，这也正对应着这个二叉搜索树所维护的有序数列。</p>
 <p>基于这种论调，再回头看上面那个动态的过程，甚至是观察我在 2 ~ 3 帧画出来的这个三角形的旋转，就会发现这种旋转实际上只是在将节点上下移动，所以不改变二叉搜索树的性质。</p>
 </details>
@@ -1974,8 +2009,8 @@ E === NULL</code></pre>
 <p>在仔细思考整个旋转过程中每一个 Subtree 的高度的变化，即可得到证明。</p>
 </details>
 <p>而 RR Single Rotation 完全对称，所以不再赘述。</p>
-<hr />
-<h5 id="_5">“换根”视角<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
+<hr>
+<h5 id="_5">“换根”视角<a class="headerlink" href="#_5" title="Permanent link">¶</a></h5>
 <p>现在我想尝试着用我自己的方式来理解这个问题。</p>
 <p>首先让我们人力动画一下这个过程（划掉）：</p>
 <div class="admonition section">
@@ -1983,7 +2018,7 @@ E === NULL</code></pre>
 <blockquote>
 <p>此外，这里要素的命名都是基于 Frame 1 的，对于 Frame 4 来说 L Right Subtree 显然已经不是 L Right Subtree 了。</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:5"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><input id="__tabbed_5_5" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Frame 1</label><label for="__tabbed_5_2">Frame 2</label><label for="__tabbed_5_3">Frame 3</label><label for="__tabbed_5_4">Frame 4</label><label for="__tabbed_5_5">Frame 5</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:5"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><input id="__tabbed_5_4" name="__tabbed_5" type="radio"><input id="__tabbed_5_5" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Frame 1</label><label for="__tabbed_5_2">Frame 2</label><label for="__tabbed_5_3">Frame 3</label><label for="__tabbed_5_4">Frame 4</label><label for="__tabbed_5_5">Frame 5</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <pre class="mermaid"><code>    flowchart TD
@@ -2061,8 +2096,8 @@ E === NULL</code></pre>
 <p>那么现在我们把它从台子上请下来，也就是说割裂它和 Trouble Finder 的亲子关系（对应 Frame 2）让它们同台“对抗”（这一步在 <code>LL</code> 和 <code>RR</code> 可能显得比较多余，但是在 <code>LR</code> 和 <code>RL</code> 就会让问题清晰很多）。</p>
 <p>然而我们仍然需要让这个森林重新变回一个树，所以就需要重新从里面找到根节点，显然，只能选择 Trouble Finder <strong>旁边</strong> 的 Left Child。但是为了继续维护二叉搜索树的性质，所以我们需要将 L Right Subtree 移植到 Trouble Finder 必定空缺（因为这里原先是 Left Child）的左指针上。</p>
 <p>OK，你可能觉得这个解释对于 LL Single Rotation 来说显得十分多此一举，但是这都是为了给后面做的铺垫，虽然这个方法看起来繁琐冗余，但是已经足以解释原先的 Single Rotation 无法解释的 LR &amp; RL 操作方法。</p>
-<hr />
-<h4 id="lr-rl">LR &amp; RL<a class="headerlink" href="#lr-rl" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="lr-rl">LR &amp; RL<a class="headerlink" href="#lr-rl" title="Permanent link">¶</a></h4>
 <p>首先我们需要知道为什么之前的方法不行，也是我觉得“旋转”这个做法在这个推进过程中比较割裂的地方：（对照 <strong><a href="#旋转视角" target="_blank">#旋转视角</a></strong> 的内容阅读）我们发现，由于 LL 中的 Trouble Maker 在左侧孩子树上，所以在旋转过程中，相当于把它“拽”上来了。然而对于 L Right Subtree，无论是旋转前还是旋转后，为了维护二叉搜索树的性质，它都被接在了深度为 1 的节点上，换句话来说 L Right Subtree 贡献的高度并没有改变。对于 RL 的情况也是同理的。所以我们并不能使用 LL Single Rotation 的方法来解决这个问题。</p>
 <div class="admonition note">
 <p class="admonition-title">关于旋转视角</p>
@@ -2074,7 +2109,7 @@ E === NULL</code></pre>
 <blockquote>
 <p>这里两个 Subtree 接到同一个 Trouble Maker 的意思是 Trouble Maker 可以出现在两者任一中。</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:5"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><input id="__tabbed_6_4" name="__tabbed_6" type="radio" /><input id="__tabbed_6_5" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Frame 1</label><label for="__tabbed_6_2">Frame 2</label><label for="__tabbed_6_3">Frame 3</label><label for="__tabbed_6_4">Frame 4</label><label for="__tabbed_6_5">Frame 5</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:5"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><input id="__tabbed_6_3" name="__tabbed_6" type="radio"><input id="__tabbed_6_4" name="__tabbed_6" type="radio"><input id="__tabbed_6_5" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Frame 1</label><label for="__tabbed_6_2">Frame 2</label><label for="__tabbed_6_3">Frame 3</label><label for="__tabbed_6_4">Frame 4</label><label for="__tabbed_6_5">Frame 5</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <pre class="mermaid"><code>    flowchart TD
@@ -2174,7 +2209,7 @@ E === NULL</code></pre>
 <details class="extra" open="open">
 <summary>关于记忆</summary>
 <p>记忆这个操作如何做的话，我的记忆方法是这样的：</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Frame 1</label><label for="__tabbed_7_2">Frame 2</label><label for="__tabbed_7_3">Frame 3</label><label for="__tabbed_7_4">Frame 4</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><input id="__tabbed_7_3" name="__tabbed_7" type="radio"><input id="__tabbed_7_4" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">Frame 1</label><label for="__tabbed_7_2">Frame 2</label><label for="__tabbed_7_3">Frame 3</label><label for="__tabbed_7_4">Frame 4</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <pre class="mermaid"><code>    flowchart TD
@@ -2256,16 +2291,16 @@ E === NULL</code></pre>
 </div>
 <p>用语言概括就是，找到关键的那三个点，然后把最下面的顶到上面去，剩下两个作为左右孩子树，原先的那个点的左右孩子树则对应地，左孩子树接到左边空缺的右孩子树上，右孩子树接到右边空缺的左孩子树上。</p>
 </details>
-<hr />
-<h3 id="_6">其他问题<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="_6">其他问题<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <div class="admonition question">
 <p class="admonition-title">如果一个 Trouble 产生后，出现了多个 Trouble Finder，该如何处理？</p>
 <p>首先，请回顾一下 <strong><a href="#操作" target="_blank">#操作</a></strong> 中被加粗的这一句话，「以『距离案发现场最近的 Trouble Finder』为根的孩子树」。也就是说，我们现在已经有了解决最近的 Trouble Finder 的方案。</p>
 <p>感性的思考，AVL 的“平衡”可以由递归形式定义，具体来说衡量的是左右孩子树的“高度”差。当我们解决了一个 Trouble Finder，意味着我们让 Trouble Finder 的最高的那个孩子树高度 -1，这也意味着以 Trouble Finder 为根的那个孩子树高度 -1，这也意味着其所有父节点的平衡因子都会相应地变化。</p>
 <p>一个 Trouble 当且仅有一个 Trouble Maker，而且它必定是 Trouble Finder 所关注的那个“最长路径”的端点，这也意味着所有的子 Trouble Finder 都在对应的父 Trouble Finder 的“最长路径”上。而现在我们让子 Trouble Finder 唯一（如果不唯一，那在这个 Trouble Maker 到来之前就已经存在 Trouble 了）的最长路径也应当会 -1。而这必将导致其平衡因子的绝对值 -1。</p>
 </div>
-<hr />
-<h2 id="splay">Splay 树<a class="headerlink" href="#splay" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="splay">Splay 树<a class="headerlink" href="#splay" title="Permanent link">¶</a></h2>
 <div class="admonition quote">
 <p class="admonition-title">link</p>
 <p>OI Wiki: https://oi-wiki.org/ds/splay/</p>
@@ -2280,16 +2315,16 @@ E === NULL</code></pre>
 <p>Splay 的核心思想就是，每当我们访问一个节点（比如查询某个点、插入某个点，甚至是删除某个点），我们就通过一系列操作将目标点转移到根部，形象上理解就是不断旋转整个树的构造，知道把点转到根部。</p>
 <div class="admonition eg">
 <p>例如我们查询点 <span class="arithmatex">\(k_1\)</span>，则会通过旋转将它转到根。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Frame 1</label><label for="__tabbed_8_2">Frame 2</label><label for="__tabbed_8_3">Frame 3</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><input id="__tabbed_8_3" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">Frame 1</label><label for="__tabbed_8_2">Frame 2</label><label for="__tabbed_8_3">Frame 3</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><img alt="" src="../img/2.png" /></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/2.png" data-desc-position="bottom"><img alt="" src="../img/2.png"></a></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="../img/3.png" /></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/3.png" data-desc-position="bottom"><img alt="" src="../img/3.png"></a></p>
 </div>
 <div class="tabbed-block">
-<p><img alt="" src="../img/4.png" /></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/4.png" data-desc-position="bottom"><img alt="" src="../img/4.png"></a></p>
 </div>
 </div>
 </div>
@@ -2299,8 +2334,8 @@ E === NULL</code></pre>
 <blockquote>
 <p>（没玩过可能听不太懂）不知道大家有没有玩过那种电子游戏，就是有好多转盘，相邻转盘之间有交界处，这些交界点上都会有圆球，当一个转盘旋转的时候，其圆周上的球体都会跟着这个圆周转动。通过不停转动相邻的圆盘，我们可以实现把某个位置的圆球转移到另外一个位置。而 Splay 差不多是这么个感觉。</p>
 </blockquote>
-<hr />
-<h3 id="_7">基本操作<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="_7">基本操作<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <p>首先我们做一个约定，对于任意一个节点 X，我们记其父节点为 P(Parent)，其父节点的父节点为 G(Grandparent)。</p>
 <ul>
 <li>当我们访问到某个点 X 时：<ul>
@@ -2314,14 +2349,14 @@ E === NULL</code></pre>
 </ul>
 </li>
 </ul>
-<p><img alt="" src="../img/5.png" /></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/5.png" data-desc-position="bottom"><img alt="" src="../img/5.png"></a></p>
 <p>可以发现，其具体操作基本就和 AVL 树的相关操作有很大重合。</p>
 <div class="admonition property">
 <p class="admonition-title">效果</p>
 <p>Splaying not only moves the accessed node to the root, but also roughly halves the depth of most nodes on the path.</p>
 </div>
-<hr />
-<h3 id="_8">对点操作<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="_8">对点操作<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
 <p>由于 Splay Tree 除了在完成所有操作以后都需要进行一次 Splay 操作，其他部分都和 BST 一样，所以这里只简单介绍一下 Splay 的部分。</p>
 <div class="admonition section">
 <p class="admonition-title">Find X</p>
@@ -2335,8 +2370,8 @@ E === NULL</code></pre>
 <p class="admonition-title">Find Max</p>
 <p>根据 BST 的性质，可以在 <span class="arithmatex">\(O(\log N)\)</span> 的时间里找到最大值，将它旋转到根部以后，可以发现它没有右孩子树，直接删掉就行。</p>
 </div>
-<hr />
-<h3 id="_9">摊还分析<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="_9">摊还分析<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
 <div class="admonition advice">
 <p class="admonition-title">前置阅读</p>
 <p>关于摊还分析的基本知识，请查看 <strong><a href="../Ex01/#摊还分析">Topic 1 | Amortized Analysis</a></strong>。</p>
@@ -2384,11 +2419,11 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
 \hat{c}_{\text{rotate }x\text{ to root}} = \hat{c}_{\text{zig}} + \sum{ {\hat{c}_{\text{zig-zag}}}_i } + \sum{ {\hat{c}_{\text{zig-zig}}}_i }
 \]</div>
 <p>而我们需要证明 <span class="arithmatex">\(\hat{c}_{\text{rotate }x\text{ to root}} = O(\log{N})\)</span>，现在我们需要分别分析 <code>zig</code>、<code>zig-zag</code>、<code>zig-zig</code>。</p>
-<hr />
-<h4 id="zig">zig<a class="headerlink" href="#zig" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="zig">zig<a class="headerlink" href="#zig" title="Permanent link">¶</a></h4>
 <div class="admonition section">
 <p class="admonition-title">Amortized Analysis for Zig</p>
-<p><img alt="" src="../img/60.png" /></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/60.png" data-desc-position="bottom"><img alt="" src="../img/60.png"></a></p>
 <div class="arithmatex">\[
 \begin{aligned}
     {\hat{c}_{\text{zig}}}_i
@@ -2434,7 +2469,7 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
 <p>我们之后需要对各种 <span class="arithmatex">\(\hat{c}\)</span> 进行求和，而每一次的 <span class="arithmatex">\(X,\;P,\;G\)</span> 都是不同的，为了在求和的时候实现错位相减，我们必须保证缩放得到的结果具有一定的<strong>传递性质</strong>，或者说在求和过程中能够达到<strong>裂项相消</strong>的效果。</p>
 <p>而对于 Splay 来说，我们的操作传递，正是通过不断将我们关注的 <span class="arithmatex">\(X\)</span> 点<strong>递归地向上旋转</strong>实现的。换句话来说，<span class="arithmatex">\(\Phi_{i}(X)\)</span> 中的 <span class="arithmatex">\(X\)</span>，就是 <span class="arithmatex">\(\Phi_{i-1}(X)\)</span> 中的 <span class="arithmatex">\(X\)</span>，如此我们最终可以得到 <span class="arithmatex">\(\Phi_{n}(X) - \Phi_{0}(X)\)</span>，而其中一个是根，一个是我们一开始打算操作的那个点。</p>
 <p>于是我们理想的缩放目标就是 <span class="arithmatex">\(k(Rank_{i}(X) - Rank_{i-1}(X)) \;\; \text{where } k \text{ is fixed for all the terms}\)</span>。</p>
-<hr />
+<hr>
 <blockquote>
 <p>不过你可能又要提问了，<code>zig</code> 分析的结果里不是有个 <span class="arithmatex">\({c_{\text{zig}}}_i = 1\)</span> 吗？</p>
 <p>这是因为 <code>zig</code> 最多只发生一次，所以这个常数是没有影响的。</p>
@@ -2445,11 +2480,11 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
 <p>随之而来的，一个需要讨论的问题是「<span class="arithmatex">\(\text{where } k \text{ is fixed for all the terms}\)</span>」真的重要吗，换句话来说，我们必须保证三个部分缩放出来都具有相同的 <span class="arithmatex">\(k\)</span> 吗？</p>
 <p>首先，重要肯定是重要的，只不过在这个问题中，由于我们旋转的方向都是向上，所以 <span class="arithmatex">\(Rank_{i}(X) \geq Rank_{i-1}(X)\)</span>，因此我们只需要最后将它们一起都缩放到 <span class="arithmatex">\(k_{overall} = \max\{k_\text{zig}, k_\text{zig-zag}, k_\text{zig-zig} \}\)</span> 就可以了。</p>
 </div>
-<hr />
-<h4 id="zig-zag">zig-zag<a class="headerlink" href="#zig-zag" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="zig-zag">zig-zag<a class="headerlink" href="#zig-zag" title="Permanent link">¶</a></h4>
 <div class="admonition section">
 <p class="admonition-title">Amortized Analysis for Zig-Zag</p>
-<p><img alt="" src="../img/61.png" /></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/61.png" data-desc-position="bottom"><img alt="" src="../img/61.png"></a></p>
 <div class="arithmatex">\[
 \begin{aligned}
     {\hat{c}_{\text{zig-zag}}}_i
@@ -2507,11 +2542,11 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
 \]</div>
 <p>皆大欢喜！</p>
 </div>
-<hr />
-<h4 id="zig-zig">zig-zig<a class="headerlink" href="#zig-zig" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="zig-zig">zig-zig<a class="headerlink" href="#zig-zig" title="Permanent link">¶</a></h4>
 <div class="admonition section">
 <p class="admonition-title">Amortized Analysis for Zig-Zig</p>
-<p><img alt="" src="../img/62.png" /></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/62.png" data-desc-position="bottom"><img alt="" src="../img/62.png"></a></p>
 <div class="arithmatex">\[
 \begin{aligned}
     {\hat{c}_{\text{zig-zig}}}_i
@@ -2568,8 +2603,8 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
 \]</div>
 <p>😩 至此，我们总算是把牛鬼蛇神的 <code>zig-zig</code> 的证明也给搞定了。</p>
 </div>
-<hr />
-<h4 id="_10">结论<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="_10">结论<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
 <div class="admonition section">
 <p class="admonition-title">Amortized Analysis for Splay</p>
 <p>至此，对于三种操作，我们都得到了它们的均摊上界：</p>
@@ -2608,6 +2643,38 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
 
 
 
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年9月17日 09:25:47 CST">2025年9月17日 09:25:47</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年9月17日 09:25:47 CST">2025年9月17日 09:25:47</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
 
@@ -2623,7 +2690,7 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   回到页面顶部
 </button>
         
@@ -2636,7 +2703,7 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2025 voilern
+      Copyright © 2025 voilern
     </div>
   
   
@@ -2657,7 +2724,7 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
       
     
     <a href="https://github.com/voilern" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
     </a>
   
     
@@ -2668,7 +2735,7 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
       
     
     <a href="https://space.bilibili.com/403057961" target="_blank" rel="noopener" title="space.bilibili.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"></path></svg>
     </a>
   
     
@@ -2676,7 +2743,7 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
     
     
     <a href="mailto:<hejiayi@zju.edu.cn>" target="_blank" rel="noopener" title="" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"></path></svg>
     </a>
   
 </div>
@@ -2705,5 +2772,7 @@ T_{\text{rotate }x\text{ to root}} = T_{\text{zig}} + \sum{ {T_{\text{zig-zag}}}
         <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
