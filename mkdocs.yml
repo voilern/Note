@@ -33,8 +33,8 @@ theme:
   
   features:
     - navigation.indexes
-    - navigation.tracking
-    - navigation.tabs
+    - navigation.tracking       #地址栏中的 URL 将自动更新为在目录中突出显示的活动锚点
+    - navigation.tabs           #顶级部分将呈现在上面视口标题下方的菜单层中，但在移动设备上保持原样
     - navigation.top
     - content.code.copy
     - content.code.select
@@ -114,7 +114,30 @@ plugins:
 nav:
   - Home: index.md
   - Computer Science:
-    - 程序设计与算法基础: 
-      - ComputerScience/Fundamentals_of_Programming_and_Algorithms/index.md
     - 数据结构基础: 
-      - ComputerScience/Fundamentals_of_Data_Structure/index.md
+      - ComputerScience/FDS/index.md
+    - 面向对象程序设计:  
+      - ComputerScience/OOP/index.md
+    - 高级数据结构:
+      - ComputerScience/ADS/index.md
+      - ComputerScience/ADS/Lec01.md
+      - ComputerScience/ADS/Lec02.md
+      - ComputerScience/ADS/Lec03.md
+      - ComputerScience/ADS/Lec04.md
+      - ComputerScience/ADS/Lec05.md
+      - ComputerScience/ADS/Lec06.md
+      - ComputerScience/ADS/Lec07.md
+      - ComputerScience/ADS/Lec08.md
+      - ComputerScience/ADS/Lec09.md
+      - ComputerScience/ADS/Lec10.md
+      - ComputerScience/ADS/Lec11.md
+      - ComputerScience/ADS/Lec12.md
+      - ComputerScience/ADS/Lec13.md
+      - ComputerScience/ADS/Lec14.md
+      - ComputerScience/ADS/Lec15.md
+      - ComputerScience/ADS/Ex01.md
+    - CS106L:
+      - ComputerScience/CS106L/index.md
+      - ComputerScience/CS106L/lec1.md
+      - ComputerScience/CS106L/lec2.md
+  # - Others: Others/index.md
