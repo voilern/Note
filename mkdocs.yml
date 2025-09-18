@@ -8,6 +8,7 @@ copyright: Copyright &copy; 2025 voilern
 
 theme:
   name: material
+  custom_dir: overrides 
   language: zh
   text: LXGW WenKai Screen
   code: CodeNewRoman Nerd Font Mono
@@ -124,6 +125,9 @@ nav:
   - Computer Science:
     - 数据结构基础: 
       - ComputerScience/FDS/index.md
+    - 计算机组成:
+      - ComputerScience/CO/index.md
+      - ComputerScience/CO/ch01.md
     - 面向对象程序设计:  
       - ComputerScience/OOP/index.md
     - 高级数据结构与算法分析:

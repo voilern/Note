@@ -1,4 +1,8 @@
-# Lecture 2: Types and Structs
+---
+comments: true
+---
+
+# Lecture 2: Types & Structs
 
 <!-- 
 ???+ Agenda

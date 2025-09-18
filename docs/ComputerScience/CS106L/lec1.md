@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Lecture 1: Welcome to CS106L
 
 ## A pitch

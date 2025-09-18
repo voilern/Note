@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Lecture 3: Initialization & References
 
 ## Initialization
