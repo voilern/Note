@@ -125,11 +125,6 @@ nav:
   - Computer Science:
     - 数据结构基础: 
       - ComputerScience/FDS/index.md
-    - 计算机组成:
-      - ComputerScience/CO/index.md
-      - ComputerScience/CO/ch01.md
-    - 面向对象程序设计:  
-      - ComputerScience/OOP/index.md
     - 高级数据结构与算法分析:
       - ComputerScience/ADS/index.md
       - ComputerScience/ADS/Lec01.md
@@ -148,6 +143,11 @@ nav:
       - ComputerScience/ADS/Lec14.md
       - ComputerScience/ADS/Lec15.md
       - ComputerScience/ADS/Ex01.md
+    - 计算机组成:
+      - ComputerScience/CO/index.md
+      - ComputerScience/CO/ch01.md
+    - 面向对象程序设计:  
+      - ComputerScience/OOP/index.md
     - CS106L:
       - ComputerScience/CS106L/index.md
       - ComputerScience/CS106L/lec1.md
