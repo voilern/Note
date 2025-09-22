@@ -72,7 +72,7 @@ markdown_extensions:
       permalink: true # 固定标题位置为当前位置
   - pymdownx.highlight: # 代码块高亮
       anchor_linenums: true
-      linenums: true # 显示行号
+      linenums: false # 显示行号
       # auto_title: true # 显示编程语言名称
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -153,4 +153,4 @@ nav:
       - ComputerScience/CS106L/lec1.md
       - ComputerScience/CS106L/lec2.md
       - ComputerScience/CS106L/lec3.md
-  # - Others: Others/index.md
+      - ComputerScience/CS106L/lec4.md

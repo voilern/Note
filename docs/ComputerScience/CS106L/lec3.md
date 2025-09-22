@@ -184,5 +184,143 @@ for (auto& [num1, num2] : nums) {
 ```
 
 ## L-value & R-value
+Before starting this section, let's see these two examples:  
+
+```cpp
+int foo() {
+    return 2;
+}
+
+int main() {
+    foo() = 2;
+    return 0;
+}
+```
+
+Try to use `g++` to compile the code above, you will get: 
+
+```
+.\lec3.cpp: In function 'int main()':
+.\lec3.cpp:49:8: error: lvalue required as left operand of assignment
+   49 |     foo() = 2;
+      |     ~~~^~
+```
+
+Another exmaple is:  
+
+```cpp
+int& foo() {
+    return 2;
+}
+```
+
+Also, you will get the follwing error message while compiling the code:  
+
+```
+.\lec3.cpp: In function 'int& foo()':
+.\lec3.cpp:77:12: error: cannot bind non-const lvalue reference of type 'int&' to an rvalue of type 'int'
+   77 |     return 2;
+      |            ^
+```
+
+Both the examples return some error message mentions `lvalue` and `rvalue`. So what do `lvalue` and `rvalue` mean in C++?  
+
+A simplified definition of `lvalues` and `rvalues`:  
+
+- An **lvalue** (locator value) represents an object that occupies some identifiable location in memory (i.e has an address).  
+- An **rvalue** (right-hand value) is defined by exclusion, by saying that every expression is either an lvalue or an rvalue. Therefore, from the definition of lvalue above, an rvalue is an expression that **does not** represent an object occupying some identifiable location in memory.
+
+A simple understanding for `lvalue` and `rvalue`: variables with its names are usually `lvalues`, instead are usually `rvalues`.  
+
+The terms as defined above may appear vague. Assuming that we have an integer variable defined and assigned to:  
+
+```cpp
+int vat;
+var = 4;
+```
+
+An assignment expects an `lvalue` as its left operand, and `var` is an `lvalue`, because it is an object with an identifiable memory location. On the other hand, the followings are invalid:  
+
+```cpp
+4 = var;        // ERROR
+(var + 1) = 4;  // ERROR
+```
+
+Neither the constant `4` nor the expression `var + 1` are `lvalues`, which means them `rvalues`. They are not `lvalues` because both are temporary results of expressions, which don't have an identifiable memory location (i.e. they can just reside in some temporary register for the duration of the computation). Therefore, assigning to them makes no semantic sense.  
+
+Returning to the first code snippet, it is clear what the error message means: `foo` returns a temporary value which is an `rvalue`, attempting to assign to it is an error. As for the second code snippet, the function is defined as `int& foo()`, which is expected to return a `lvalue`, however,  `2` is an `rvalue`. so the error occurs.  
+
+Another example from CS106L:  
+
+```cpp
+#include <stdio.h>
+#include <cmath>
+#include <iostream>
+
+int square(int& num) {
+    return std::pow(num, 2);
+}
+
+int main() {
+    int lvalue = 2;
+    auto four = square(lvalue);
+    auto fouragain = sqaure(2);
+    std::cout << four << std::endl;
+    return 0;
+}
+```
+
+Compiling the code will generate the following error message:  
+
+```
+.\lec3.cpp: In function 'int main()':
+.\lec3.cpp:66:29: error: cannot bind non-const lvalue reference of type 'int&' to an rvalue of type 'int'
+   66 |     auto fouragain = square(2); // error: cannot bind non-const lvalue reference of type 'int&' to an rvalue of type 'int'
+      |                             ^
+.\lec3.cpp:59:17: note:   initializing argument 1 of 'int square(int&)'
+   59 | int square(int& num) {
+      |            ~~~~~^~~
+```
+
+The error occurs at `auto foutagain = square(2)`, because for the function `int sqaure(int& num)`, it expects an `non-const lvalue reference` as parameter, but `2` is an `rvalue`.  
+
+There are still lots of features relating to `lvalue` and `rvalue`, if interested, you can refer to the following blogs.    
+
+- [Understanding lvalues and rvalues in C and C++](https://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c)  
+- [（上文的译文）理解 C/C++ 中的左值和右值](https://nettee.github.io/posts/2018/Understanding-lvalues-and-rvalues-in-C-and-C/)   
 
 ## Const
+A simple definition of `const`: A qualifier for objects that declares they cannot be modified.  
+
+```cpp
+#include <iostream>
+#include <vector>
+
+int main() {
+    std::vector<int> vec{ 1, 2, 3 };                // a normal vector
+    const std::vector<int> const_vec{ 1, 2, 3 };    // a const vector
+    std::vector<int>& ref_vec{ vec };               // a reference to 'vec'
+    const std::vector<int>& const_ref{ vec };       // a const reference
+
+    // `push_back` is a function to add a new element in the tail of the container (vector in this example)
+    vec.push_back(3);           // This is okay
+    const_vec.push_back(3);     // Error!
+    ref_vec.push_back(3);       // This is okay
+    const_ref.push_back(3);     // Error!
+    return 0;
+}
+```
+
+From the definition we can explain the errors above. `const_vec` is a `const vector`, once initialized, you cannot call any functions that causes modification to it, such as `push_back`. `const_ref` is a `const reference`, though the source vector `vec` is not a `const vector`, `const_ref` is just a `read-only` alias to it. Furthermore, you can't declare a `non-const reference` to a `const` variable.  
+
+```cpp
+int main() {
+    const std::vector<int> const_vec{ 1, 2, 3 };
+    std::vector<int>& bad_ref{ const_vet };                         // Bad!
+
+    const std::vector<int> another_const_vec{ 1, 2, 3 };
+    const std::vector<int>& good_ref{ another_const_vec };          // Good!
+}
+```
+
+`const` is a way to ensure that you can't modify a variable.  
