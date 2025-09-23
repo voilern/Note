@@ -21,5 +21,5 @@
     4. Project 以 2 人为一小组，完成 2 / 7 即可，互评规则与 FDS 一致。
 
 !!! info "说明"
-    本笔记暂时完全来源于 [Isshiki修的ads笔记](https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/)
+    本课程的笔记暂时完全来源于 [Isshiki修的ads笔记](https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/){target="_blank"} 
     

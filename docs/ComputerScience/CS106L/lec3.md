@@ -286,8 +286,8 @@ The error occurs at `auto foutagain = square(2)`, because for the function `int 
 
 There are still lots of features relating to `lvalue` and `rvalue`, if interested, you can refer to the following blogs.    
 
-- [Understanding lvalues and rvalues in C and C++](https://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c)  
-- [（上文的译文）理解 C/C++ 中的左值和右值](https://nettee.github.io/posts/2018/Understanding-lvalues-and-rvalues-in-C-and-C/)   
+- [Understanding lvalues and rvalues in C and C++](https://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c){target="_blank"}  
+- [（上文的译文）理解 C/C++ 中的左值和右值](https://nettee.github.io/posts/2018/Understanding-lvalues-and-rvalues-in-C-and-C/){target="_blank"}  
 
 ## Const
 A simple definition of `const`: A qualifier for objects that declares they cannot be modified.  

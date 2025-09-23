@@ -3,16 +3,6 @@
 !!! info "说明"
     原先安排在这一章节的摊还分析现在被迁移到了这个地方：[Topic 1 | Amortized Analysis](./Ex01.md)。
 
-    !!! tip "阅读技巧"
-        因为没法在这里用代码写动画，所以我用 [Tab](https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/?h=%3D%3D%3D#tabbed) 模拟了一下动画帧，可以手动切换这些标签来动态观察。一般这种内容的 Tab 标题都会是 `Frame {}`。
-
-        === "Frame 1"
-            Like
-        === "Frame 2"
-            Like this
-        === "Frame 3"
-            Like this!
-
 ## AVL 树
 
 ### 概念
