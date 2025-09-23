@@ -522,6 +522,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1173,6 +1177,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Homework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discussion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Discussion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1283,6 +1333,8 @@
           
         
       
+        
+      
     
     
     
@@ -1310,6 +1362,11 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
@@ -1319,6 +1376,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OOP/lec1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lecture 1: Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -1745,28 +1825,11 @@
 
 <h1 id="lecture-1-avl-trees-splay-trees">Lecture 1 | AVL Trees &amp; Splay Trees<a class="headerlink" href="#lecture-1-avl-trees-splay-trees" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 7130 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 8 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 24 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 7059 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"></path></svg></span> 8 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 24 分钟</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">说明</p>
 <p>原先安排在这一章节的摊还分析现在被迁移到了这个地方：<a href="../Ex01/">Topic 1 | Amortized Analysis</a>。</p>
-<div class="admonition tip">
-<p class="admonition-title">阅读技巧</p>
-<p>因为没法在这里用代码写动画，所以我用 <a href="https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/?h=%3D%3D%3D#tabbed">Tab</a> 模拟了一下动画帧，可以手动切换这些标签来动态观察。一般这种内容的 Tab 标题都会是 <code>Frame {}</code>。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Frame 1</label><label for="__tabbed_1_2">Frame 2</label><label for="__tabbed_1_3">Frame 3</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Like</p>
-</div>
-<div class="tabbed-block">
-<p>Like this</p>
-</div>
-<div class="tabbed-block">
-<p>Like this!</p>
-</div>
-</div>
-</div>
-</div>
 </div>
 <h2 id="avl">AVL 树<a class="headerlink" href="#avl" title="Permanent link">¶</a></h2>
 <h3 id="_1">概念<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
@@ -1859,7 +1922,7 @@ F_i = \left\{
 <p class="admonition-title">Trouble Maker &amp; Trouble Finder</p>
 <p>以 🌰 来说明。</p>
 <div class="admonition note">
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Frame 1</label><label for="__tabbed_2_2">Frame 2</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Frame 1</label><label for="__tabbed_1_2">Frame 2</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>下图为一个 AVL 树：</p>
@@ -1905,7 +1968,7 @@ E === NULL</code></pre>
 <p>同心圆表示这个点是需要我们在后续操作中关注的。</p>
 <p>此外，虽然实际情况下可能出现多个 Trouble Finder，但是我们只关注<strong>以「距离案发现场最近的 Trouble Finder」为根的孩子树</strong>（这句话非常重要）。</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">LL</label><label for="__tabbed_3_2">RR</label><label for="__tabbed_3_3">LR</label><label for="__tabbed_3_4">RL</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">LL</label><label for="__tabbed_2_2">RR</label><label for="__tabbed_2_3">LR</label><label for="__tabbed_2_4">RL</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <pre class="mermaid"><code>flowchart TD
@@ -2043,7 +2106,7 @@ E === NULL</code></pre>
 <p>在 Frame 2 和 Frame 3 之间添加的细线是为了表示这里 L Right Subtree 的转移方法，让 2 ~ 3 帧的“旋转”过程中更加清晰。</p>
 <p>此外，这里要素的命名都是基于 Frame 1 的，对于 Frame 4 来说 L Right Subtree 显然已经不是 L Right Subtree 了。</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><input id="__tabbed_4_4" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Frame 1</label><label for="__tabbed_4_2">Frame 2</label><label for="__tabbed_4_3">Frame 3</label><label for="__tabbed_4_4">Frame 4</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Frame 1</label><label for="__tabbed_3_2">Frame 2</label><label for="__tabbed_3_3">Frame 3</label><label for="__tabbed_3_4">Frame 4</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <pre class="mermaid"><code>    flowchart TD
@@ -2134,7 +2197,7 @@ E === NULL</code></pre>
 <blockquote>
 <p>此外，这里要素的命名都是基于 Frame 1 的，对于 Frame 4 来说 L Right Subtree 显然已经不是 L Right Subtree 了。</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:5"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><input id="__tabbed_5_4" name="__tabbed_5" type="radio"><input id="__tabbed_5_5" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Frame 1</label><label for="__tabbed_5_2">Frame 2</label><label for="__tabbed_5_3">Frame 3</label><label for="__tabbed_5_4">Frame 4</label><label for="__tabbed_5_5">Frame 5</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:5"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><input id="__tabbed_4_4" name="__tabbed_4" type="radio"><input id="__tabbed_4_5" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Frame 1</label><label for="__tabbed_4_2">Frame 2</label><label for="__tabbed_4_3">Frame 3</label><label for="__tabbed_4_4">Frame 4</label><label for="__tabbed_4_5">Frame 5</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <pre class="mermaid"><code>    flowchart TD
@@ -2225,7 +2288,7 @@ E === NULL</code></pre>
 <blockquote>
 <p>这里两个 Subtree 接到同一个 Trouble Maker 的意思是 Trouble Maker 可以出现在两者任一中。</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:5"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><input id="__tabbed_6_3" name="__tabbed_6" type="radio"><input id="__tabbed_6_4" name="__tabbed_6" type="radio"><input id="__tabbed_6_5" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Frame 1</label><label for="__tabbed_6_2">Frame 2</label><label for="__tabbed_6_3">Frame 3</label><label for="__tabbed_6_4">Frame 4</label><label for="__tabbed_6_5">Frame 5</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:5"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><input id="__tabbed_5_4" name="__tabbed_5" type="radio"><input id="__tabbed_5_5" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Frame 1</label><label for="__tabbed_5_2">Frame 2</label><label for="__tabbed_5_3">Frame 3</label><label for="__tabbed_5_4">Frame 4</label><label for="__tabbed_5_5">Frame 5</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <pre class="mermaid"><code>    flowchart TD
@@ -2325,7 +2388,7 @@ E === NULL</code></pre>
 <details class="extra" open="open">
 <summary>关于记忆</summary>
 <p>记忆这个操作如何做的话，我的记忆方法是这样的：</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><input id="__tabbed_7_3" name="__tabbed_7" type="radio"><input id="__tabbed_7_4" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">Frame 1</label><label for="__tabbed_7_2">Frame 2</label><label for="__tabbed_7_3">Frame 3</label><label for="__tabbed_7_4">Frame 4</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:4"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><input id="__tabbed_6_3" name="__tabbed_6" type="radio"><input id="__tabbed_6_4" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Frame 1</label><label for="__tabbed_6_2">Frame 2</label><label for="__tabbed_6_3">Frame 3</label><label for="__tabbed_6_4">Frame 4</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <pre class="mermaid"><code>    flowchart TD
@@ -2431,7 +2494,7 @@ E === NULL</code></pre>
 <p>Splay 的核心思想就是，每当我们访问一个节点（比如查询某个点、插入某个点，甚至是删除某个点），我们就通过一系列操作将目标点转移到根部，形象上理解就是不断旋转整个树的构造，知道把点转到根部。</p>
 <div class="admonition eg">
 <p>例如我们查询点 <span class="arithmatex">\(k_1\)</span>，则会通过旋转将它转到根。</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><input id="__tabbed_8_3" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">Frame 1</label><label for="__tabbed_8_2">Frame 2</label><label for="__tabbed_8_3">Frame 3</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><input id="__tabbed_7_3" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">Frame 1</label><label for="__tabbed_7_2">Frame 2</label><label for="__tabbed_7_3">Frame 3</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/2.png" data-desc-position="bottom"><img alt="" src="../img/2.png"></a></p>

@@ -4,3 +4,10 @@ body {
 font-family: "LXGW WenKai";
 font-weight: normal;
 }
+
+/* 用于图片居中，使用时在图片的Markdown语法后加上{.center}即可 */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
