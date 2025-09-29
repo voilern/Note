@@ -96,6 +96,7 @@ extra_css:
   - stylesheets/css/card.css
   - stylesheets/css/flink.css
   - stylesheets/css/extra.css
+  # - stylesheets/css/stylesheets.css
   # - stylesheets/css/rounded_corner.css
   - https://unpkg.com/katex@0/dist/katex.min.css
   - https://static.zeoseven.com/zsft/292/main/result.css
