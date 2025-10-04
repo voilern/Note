@@ -1,7 +1,7 @@
 # Homework
 
-!!! note "TBD"
-    每道题的解答尚未写在文档中。
+!!! abstract 
+    本部分用以记录每周发布在 PTA 上作业题的客观题，部分题目 ~~看我心情~~ 会写解析。
 
 ## Homework 1
 
@@ -119,4 +119,65 @@
 - C. leaves and nonleaf nodes have some key values in common
 
 - D. all nonleaf nodes have between $\lceil M/2\rceil$ and $M$ children
+
+## Homework 3
+
+**1-1** In distributed indexing, document-partitioned strategy is to store on each node all the documents that contain the terms in a certain range.
+
+- T
+
+- F
+
+**1-2** When evaluating the performance of data retrieval, it is important to measure the relevancy of the answer set.
+
+- T
+
+- F
+
+**1-3** Precision is more important than recall when evaluating the explosive detection in airport security.   
+
+- T
+
+- F
+
+**1-4** While accessing a term by hashing in an inverted file index, range searches are expensive.  
+
+- T
+
+- F
+
+**2-1** When measuring the relevancy of the answer set, if the precision is high but the recall is low, it means that:
+
+- A.most of the relevant documents are retrieved, but too many irrelevant documents are returned as well
+
+- B.most of the retrieved documents are relevant, but still a lot of relevant documents are missed
+
+- C.most of the relevant documents are retrieved, but the benchmark set is not large enough
+
+- D.most of the retrieved documents are relevant, but the benchmark set is not large enough
+
+**2-2** Which of the following is NOT concerned for measuring a search engine?
+
+- A.How fast does it index
+
+- B.How fast does it search
+
+- C.How friendly is the interface
+
+- D.How relevant is the answer set
+
+**2-3** There are 28000 documents in the database. The statistic data for one query are shown in the following table. The recall is: __
+
+|       |   Relevant    |   Irrelevant  |
+| :---: |   :---:       |   :---:       |
+| Retrieved |   4000    |   12000       |
+| Not Retrieved |   8000|   4000        |
+
+- A.14%
+
+- B.25%
+
+- C.33%
+
+- D.50%
 
