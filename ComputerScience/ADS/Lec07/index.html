@@ -379,6 +379,8 @@
       
         
       
+        
+      
     
     
     
@@ -1553,6 +1555,95 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Others
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/wsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1943,19 +2034,13 @@ T(N) = ... =
 <details class="eg">
 <summary>examples for form 1</summary>
 <ul>
-<li>【eg1】<span class="arithmatex">\(a = b = 2,\; f(N) = N\)</span>；<ul>
-<li><span class="arithmatex">\(f(N) = N = \Theta(N^{\log_2{2}})\)</span>，适用于情况 2；</li>
-<li>因此得到结果 <span class="arithmatex">\(T(N) = \Theta(N \log N)\)</span>；</li>
-</ul>
-</li>
-<li>【eg2】<span class="arithmatex">\(a = b = 2,\; f(N) = N \log N\)</span>；<ul>
-<li><span class="arithmatex">\(f(N) = N \log N\)</span>，虽然 <span class="arithmatex">\(N \log N = \Omega(N^{\log_2{2}})\)</span>，但是 <span class="arithmatex">\(N \log N \neq \Omega(N^{(\log_2{2}) - \varepsilon})\)</span>，所以不适用于情况 3；<ul>
-<li>具体来说，<span class="arithmatex">\(\lim \limits_{N\to \infty} \frac{N \log N}{N^{1+\varepsilon}}=\lim \limits_{N\to \infty} \frac{\log N}{N^{\varepsilon}} = 0 \text{ for fixed } \varepsilon &gt; 0\)</span>；</li>
-<li>这个例子体现出了 <span class="arithmatex">\(\varepsilon\)</span> 的一定作用；</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>【eg1】<span class="arithmatex">\(a = b = 2,\; f(N) = N\)</span>；
+    - <span class="arithmatex">\(f(N) = N = \Theta(N^{\log_2{2}})\)</span>，适用于情况 2；
+    - 因此得到结果 <span class="arithmatex">\(T(N) = \Theta(N \log N)\)</span>；</li>
+<li>【eg2】<span class="arithmatex">\(a = b = 2,\; f(N) = N \log N\)</span>；
+    - <span class="arithmatex">\(f(N) = N \log N\)</span>，虽然 <span class="arithmatex">\(N \log N = \Omega(N^{\log_2{2}})\)</span>，但是 <span class="arithmatex">\(N \log N \neq \Omega(N^{(\log_2{2}) - \varepsilon})\)</span>，所以不适用于情况 3；
+        - 具体来说，<span class="arithmatex">\(\lim \limits_{N\to \infty} \frac{N \log N}{N^{1+\varepsilon}}=\lim \limits_{N\to \infty} \frac{\log N}{N^{\varepsilon}} = 0 \text{ for fixed } \varepsilon &gt; 0\)</span>；
+        - 这个例子体现出了 <span class="arithmatex">\(\varepsilon\)</span> 的一定作用；</li>
 </ul>
 </details>
 <hr>

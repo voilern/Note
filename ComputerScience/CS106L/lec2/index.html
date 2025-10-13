@@ -379,6 +379,8 @@
       
         
       
+        
+      
     
     
     
@@ -1508,6 +1510,95 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Others
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/wsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1683,14 +1774,12 @@
 <h2 id="the-type-system">The Type System<a class="headerlink" href="#the-type-system" title="Permanent link">¶</a></h2>
 <ul>
 <li>A type refers to the "category" of a variable  </li>
-<li>C++ comes with built-in types, such as:  <ul>
-<li>int </li>
-<li>double </li>
-<li>string  </li>
-<li>bool </li>
-<li>size_t  </li>
-</ul>
-</li>
+<li>C++ comes with built-in types, such as:<br>
+    - int 
+    - double 
+    - string<br>
+    - bool 
+    - size_t  </li>
 </ul>
 <p>C++ enforces the appropriate use of variable types through its type system, so we say C++ is a <strong>statically typed</strong> language.  </p>
 <h3 id="static-typing">Static Typing<a class="headerlink" href="#static-typing" title="Permanent link">¶</a></h3>
@@ -1762,12 +1851,10 @@
 <h3 id="std-the-c-standard-library">std: The C++ Standard Library<a class="headerlink" href="#std-the-c-standard-library" title="Permanent link">¶</a></h3>
 <ul>
 <li>Built-in types, functions, and more provided by C++</li>
-<li>You need to <code>#include</code> the relevant file  <ul>
-<li><code>#include &lt;string&gt; -&gt; std::string</code></li>
-<li><code>#include &lt;utility&gt; -&gt; std::pair</code></li>
-<li><code>#include &lt;iostream&gt; -&gt; std::cout, std::endl</code></li>
-</ul>
-</li>
+<li>You need to <code>#include</code> the relevant file<br>
+    - <code>#include &lt;string&gt; -&gt; std::string</code>
+    - <code>#include &lt;utility&gt; -&gt; std::pair</code>
+    - <code>#include &lt;iostream&gt; -&gt; std::cout, std::endl</code></li>
 <li>We prefix standard library names with <code>std::</code>. Although if we write <code>using namespace std;</code> we actually don't have to, but this is considered bad style as it can introduce ambiguity.  </li>
 <li>Without <code>#include</code> header file, we can create a template to still use some <code>std</code>.</li>
 </ul>

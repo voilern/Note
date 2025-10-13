@@ -15,6 +15,8 @@
         <link rel="prev" href="../lec3/">
       
       
+        <link rel="next" href="../../Others/">
+      
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
@@ -366,6 +368,8 @@
   
     
     
+      
+        
       
         
       
@@ -1449,6 +1453,95 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Others
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/wsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1577,18 +1670,14 @@
 
 <p>Streams allow for a universal way of dealing with external data. We can classify different types of streams as:  </p>
 <ul>
-<li>Input streams (I): a way to read data from a source.<ul>
-<li>Are inherited from <code>std::ostream</code></li>
-<li>ex. reading in something from the console <code>std::cin</code></li>
-<li>primary operator: <code>&gt;&gt;</code> (the extraction operator)</li>
-</ul>
-</li>
-<li>Output streams (O): a way to write data to a destination.<ul>
-<li>Are inherited from <code>std::ostream</code></li>
-<li>ex. writing out something to the console <code>std::cout</code></li>
-<li>primary operator: <code>&lt;&lt;</code> (the insertion operator)</li>
-</ul>
-</li>
+<li>Input streams (I): a way to read data from a source.
+    - Are inherited from <code>std::ostream</code>
+    - ex. reading in something from the console <code>std::cin</code>
+    - primary operator: <code>&gt;&gt;</code> (the extraction operator)</li>
+<li>Output streams (O): a way to write data to a destination.
+    - Are inherited from <code>std::ostream</code>
+    - ex. writing out something to the console <code>std::cout</code>
+    - primary operator: <code>&lt;&lt;</code> (the insertion operator)</li>
 </ul>
 <h3 id="stdstringstream"><code>std::stringstream</code><a class="headerlink" href="#stdstringstream" title="Permanent link">¶</a></h3>
 <p><code>std::stringstream</code> is a way to treat strings as streams, useful for use-cases that deal with mixing data types.  </p>
@@ -1699,12 +1788,10 @@ Here we encounter the conflict: we want to extract the rest of <code>initial_quo
 <ul>
 <li><code>std::cin</code> is buffered.</li>
 <li>Think of it as a place where a user can store some data and then read from it.  </li>
-<li><code>std::cin</code> buffer stops at a whitespace, which in     C++ includes: <ul>
-<li>" " (a literal space)</li>
-<li>\n</li>
-<li>\t</li>
-</ul>
-</li>
+<li><code>std::cin</code> buffer stops at a whitespace, which in     C++ includes: 
+    - " " (a literal space)
+    - \n
+    - \t</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span>

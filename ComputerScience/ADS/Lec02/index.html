@@ -379,6 +379,8 @@
       
         
       
+        
+      
     
     
     
@@ -1514,6 +1516,95 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Others
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/wsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1816,10 +1907,8 @@
 <p>现在，我们记这个被插入的节点为 <code>x</code>，任意一个节点 <code>node</code> 的家长节点为 <code>node.p</code>，则：</p>
 <ol>
 <li>如果 <code>x.p</code> 是黑色的，那么我们不需要做任何调整；</li>
-<li>如果 <code>x.p</code> 是红色的，那么我们需要进行调整；<ul>
-<li>此时因为原来的树符合红黑性质，<code>x.p.p</code> 必定存在（红 <code>x.p</code> 不能是根）且必定是黑色的；</li>
-</ul>
-</li>
+<li>如果 <code>x.p</code> 是红色的，那么我们需要进行调整；
+    - 此时因为原来的树符合红黑性质，<code>x.p.p</code> 必定存在（红 <code>x.p</code> 不能是根）且必定是黑色的；</li>
 </ol>
 <p>根据这些讨论，我们就能列举出来一个红色的点被插入后，在 <code>2.</code> 的情况下所有的<strong>初始情况</strong>，即下面第一张图。</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/8.png" data-desc-position="bottom"><img alt="" loading="lazy" src="../img/8.png"></a></p>

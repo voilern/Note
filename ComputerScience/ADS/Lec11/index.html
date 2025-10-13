@@ -379,6 +379,8 @@
       
         
       
+        
+      
     
     
     
@@ -1583,6 +1585,95 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Others
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/wsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2107,16 +2198,12 @@ r(C) = \max_{s_i\in S} \{ dis(s_i, C) \} \\
 <p>设 <span class="arithmatex">\(C_x\)</span> 表示选中的 center，<span class="arithmatex">\(S_x\)</span> 表示尚未被任何圆覆盖的 site，<span class="arithmatex">\(r_x\)</span> 表示当前二分出来的，要我们判断的半径，<span class="arithmatex">\(S\)</span> 依然表示所有 site 的集合：</p>
 <ol>
 <li>初始化 <span class="arithmatex">\(C_x = \emptyset\)</span>；</li>
-<li>当 <span class="arithmatex">\(S_x \not = \emptyset\)</span> 时（即还有点没被覆盖时），重复这些操作：<ol>
-<li>随机选取一个 site <span class="arithmatex">\(s_i \in S_x\)</span>，将其插入 <span class="arithmatex">\(C_x\)</span>（即将 <span class="arithmatex">\(s_i\)</span> 当作一个 center），并从 <span class="arithmatex">\(S_x\)</span> 中将 <span class="arithmatex">\(s_i\)</span> 删除（即 <span class="arithmatex">\(s_i\)</span> 必定被覆盖）；</li>
-<li>删除 <span class="arithmatex">\(S_x\)</span> 中所有距离 <span class="arithmatex">\(s_i\)</span> 不足 <span class="arithmatex">\(r_x\)</span> 的点（即删除满足 <span class="arithmatex">\(dis(s_i, s_j) \leq r_x\)</span> 的所有 <span class="arithmatex">\(s_k \in S_x\)</span>）；</li>
-</ol>
-</li>
-<li>当所有点都被覆盖后：<ol>
-<li>如果 <span class="arithmatex">\(|C_x| \leq k\)</span>，则返回 yes；</li>
-<li>否则返回 no；</li>
-</ol>
-</li>
+<li>当 <span class="arithmatex">\(S_x \not = \emptyset\)</span> 时（即还有点没被覆盖时），重复这些操作：
+    1. 随机选取一个 site <span class="arithmatex">\(s_i \in S_x\)</span>，将其插入 <span class="arithmatex">\(C_x\)</span>（即将 <span class="arithmatex">\(s_i\)</span> 当作一个 center），并从 <span class="arithmatex">\(S_x\)</span> 中将 <span class="arithmatex">\(s_i\)</span> 删除（即 <span class="arithmatex">\(s_i\)</span> 必定被覆盖）；
+    2. 删除 <span class="arithmatex">\(S_x\)</span> 中所有距离 <span class="arithmatex">\(s_i\)</span> 不足 <span class="arithmatex">\(r_x\)</span> 的点（即删除满足 <span class="arithmatex">\(dis(s_i, s_j) \leq r_x\)</span> 的所有 <span class="arithmatex">\(s_k \in S_x\)</span>）；</li>
+<li>当所有点都被覆盖后：
+    1. 如果 <span class="arithmatex">\(|C_x| \leq k\)</span>，则返回 yes；
+    2. 否则返回 no；</li>
 </ol>
 <p>如果返回 yes，则下一个 <span class="arithmatex">\(r_x\)</span> 应当取更小的 <span class="arithmatex">\(r_x\)</span>；如果返回 no，下一次应该取更大的 <span class="arithmatex">\(r_x\)</span>（稍候会解释为什么）。</p>
 </div>
@@ -2169,11 +2256,9 @@ r(C) = \max_{s_i\in S} \{ dis(s_i, C) \} \\
 <ol>
 <li>初始化 <span class="arithmatex">\(C_x = \emptyset\)</span>，<span class="arithmatex">\(S_x = S\)</span>；</li>
 <li>随机选取一个 site <span class="arithmatex">\(s_i \in S_x\)</span>，将其插入 <span class="arithmatex">\(C_x\)</span>，并从 <span class="arithmatex">\(S_x\)</span> 中将 <span class="arithmatex">\(s_i\)</span> 删除；</li>
-<li>当 <span class="arithmatex">\(|C_x| \leq k\)</span> 且 <span class="arithmatex">\(S_x \not = \emptyset\)</span> 时，重复以下步骤：<ol>
-<li>选取一个 site <span class="arithmatex">\(s_i \in S_x\)</span>，这个 site 满足 <span class="arithmatex">\(\forall s_j \in S_x \quad dis(s_i, C_x) \geq dis(s_j, C_x)\)</span>（即这个点是还没被覆盖的点中距离 <span class="arithmatex">\(C_x\)</span> 最远的点）；</li>
-<li>将 <span class="arithmatex">\(s_i\)</span> 插入 <span class="arithmatex">\(C_x\)</span>，并从 <span class="arithmatex">\(S_x\)</span> 中将 <span class="arithmatex">\(s_i\)</span> 删除；</li>
-</ol>
-</li>
+<li>当 <span class="arithmatex">\(|C_x| \leq k\)</span> 且 <span class="arithmatex">\(S_x \not = \emptyset\)</span> 时，重复以下步骤：
+    1. 选取一个 site <span class="arithmatex">\(s_i \in S_x\)</span>，这个 site 满足 <span class="arithmatex">\(\forall s_j \in S_x \quad dis(s_i, C_x) \geq dis(s_j, C_x)\)</span>（即这个点是还没被覆盖的点中距离 <span class="arithmatex">\(C_x\)</span> 最远的点）；
+    2. 将 <span class="arithmatex">\(s_i\)</span> 插入 <span class="arithmatex">\(C_x\)</span>，并从 <span class="arithmatex">\(S_x\)</span> 中将 <span class="arithmatex">\(s_i\)</span> 删除；</li>
 <li>如果 <span class="arithmatex">\(|C_x| \leq k\)</span> 且 <span class="arithmatex">\(S_x = \emptyset\)</span>，则返回 yes；否则返回 no。</li>
 </ol>
 </div>

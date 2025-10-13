@@ -379,6 +379,8 @@
       
         
       
+        
+      
     
     
     
@@ -1532,6 +1534,95 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Others
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/wsl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WSL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1865,22 +1956,14 @@
 <h3 id="_6">优化空间<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>可以优化的部分主要有这么几个：</p>
 <ul>
-<li>一个 pass 意味着若干次 seek，所以减少 pass 可以是一个方向；<ul>
-<li><a href="#pass-数量分析与优化" target="_blank">#pass-数量分析与优化</a></li>
-</ul>
-</li>
-<li>merge 的过程中会多次读取 tape 中的数据，而对于计算机来说单次大量读取比多次小量读取更高效，如何优化数据读取也是一个方向；<ul>
-<li><a href="#tape-数量分析与优化" target="_blank">#tape-数量分析与优化</a></li>
-</ul>
-</li>
-<li>如何更高效的在 <span class="arithmatex">\(k\)</span>-way merge 过程中，归并 M 个分别来自 k 个序列的数据，即内排序的策略，也上优化的一个方向；<ul>
-<li><a href="#k-路内排序优化" target="_blank">#k-路内排序优化</a></li>
-</ul>
-</li>
-<li>读入、内排序、输出，这三个事务目前是停机串行的，考虑将其并行化也是一个方向；<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> TODO</li>
-</ul>
-</li>
+<li>一个 pass 意味着若干次 seek，所以减少 pass 可以是一个方向；
+    - <a href="#pass-数量分析与优化" target="_blank">#pass-数量分析与优化</a></li>
+<li>merge 的过程中会多次读取 tape 中的数据，而对于计算机来说单次大量读取比多次小量读取更高效，如何优化数据读取也是一个方向；
+    - <a href="#tape-数量分析与优化" target="_blank">#tape-数量分析与优化</a></li>
+<li>如何更高效的在 <span class="arithmatex">\(k\)</span>-way merge 过程中，归并 M 个分别来自 k 个序列的数据，即内排序的策略，也上优化的一个方向；
+    - <a href="#k-路内排序优化" target="_blank">#k-路内排序优化</a></li>
+<li>读入、内排序、输出，这三个事务目前是停机串行的，考虑将其并行化也是一个方向；
+    - [ ] TODO</li>
 </ul>
 <hr>
 <h3 id="pass">pass 数量分析与优化<a class="headerlink" href="#pass" title="Permanent link">¶</a></h3>
