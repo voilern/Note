@@ -81,6 +81,7 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - mdx_truly_sane_lists
 
 extra:
   generator: true
@@ -159,3 +160,6 @@ nav:
       - ComputerScience/CS106L/lec2.md
       - ComputerScience/CS106L/lec3.md
       - ComputerScience/CS106L/lec4.md
+    - Others:
+      - ComputerScience/Others/index.md
+      - ComputerScience/Others/wsl.md

@@ -9,7 +9,7 @@
     - Homework 5%  
     - Quiz 5%  
     - Discussions 10%  
-    - Research Project + Peer Review 10%  
+    - Research Project + Peer Review 30%  
     - MidTerm 10%*  
     - Final Exam 40%*  
     
