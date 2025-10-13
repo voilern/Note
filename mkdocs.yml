@@ -151,7 +151,8 @@ nav:
       - ComputerScience/CO/ch01.md
     - 面向对象程序设计:  
       - ComputerScience/OOP/index.md
-      - ComputerScience/OOP/lec1.md
+      - ComputerScience/OOP/lec2.md
+      - ComputerScience/OOP/lec3.md
     - CS106L:
       - ComputerScience/CS106L/index.md
       - ComputerScience/CS106L/lec1.md
