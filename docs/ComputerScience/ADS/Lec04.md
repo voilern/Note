@@ -1,4 +1,4 @@
-# Lecture 4 | Leftist Heap & Skew Heap
+# Lecture 4: Leftist Heap & Skew Heap
 
 ## Leftist Heap
 

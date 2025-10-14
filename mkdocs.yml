@@ -81,7 +81,6 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  - mdx_truly_sane_lists
 
 extra:
   generator: true
@@ -133,20 +132,21 @@ nav:
       - ComputerScience/ADS/Lec02.md
       - ComputerScience/ADS/Lec03.md
       - ComputerScience/ADS/Lec04.md
-      - ComputerScience/ADS/Lec05.md
-      - ComputerScience/ADS/Lec06.md
-      - ComputerScience/ADS/Lec07.md
-      - ComputerScience/ADS/Lec08.md
-      - ComputerScience/ADS/Lec09.md
-      - ComputerScience/ADS/Lec10.md
-      - ComputerScience/ADS/Lec11.md
-      - ComputerScience/ADS/Lec12.md
-      - ComputerScience/ADS/Lec13.md
-      - ComputerScience/ADS/Lec14.md
-      - ComputerScience/ADS/Lec15.md
+      # - ComputerScience/ADS/Lec05.md
+      # - ComputerScience/ADS/Lec06.md
+      # - ComputerScience/ADS/Lec07.md
+      # - ComputerScience/ADS/Lec08.md
+      # - ComputerScience/ADS/Lec09.md
+      # - ComputerScience/ADS/Lec10.md
+      # - ComputerScience/ADS/Lec11.md
+      # - ComputerScience/ADS/Lec12.md
+      # - ComputerScience/ADS/Lec13.md
+      # - ComputerScience/ADS/Lec14.md
+      # - ComputerScience/ADS/Lec15.md
       - ComputerScience/ADS/Ex01.md
       - ComputerScience/ADS/homework.md
       - ComputerScience/ADS/discussion.md
+      - ComputerScience/ADS/quiz.md
     - 计算机组成:
       - ComputerScience/CO/index.md
       - ComputerScience/CO/ch01.md

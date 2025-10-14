@@ -1,4 +1,4 @@
-# Lecture 1 | AVL Trees & Splay Trees
+# Lecture 1: AVL Trees & Splay Trees
 
 !!! info "说明"
     原先安排在这一章节的摊还分析现在被迁移到了这个地方：[Topic 1 | Amortized Analysis](./Ex01.md)。

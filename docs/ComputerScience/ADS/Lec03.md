@@ -1,4 +1,4 @@
-# Lecture 3 | Inverted File Index
+# Lecture 3: Inverted File Index
 
 ## 倒排索引
 

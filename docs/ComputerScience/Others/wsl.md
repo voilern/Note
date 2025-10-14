@@ -32,7 +32,6 @@ WSL2 通过一个虚拟硬盘文件（`ext4.vhdx`）运行 Linux 发行版，当
 
     ```bash
     > wsl -l -v
-    > wsl -l -v
     NAME              STATE           VERSION
     * Ubuntu-24.04      Stopped         2
     ```
