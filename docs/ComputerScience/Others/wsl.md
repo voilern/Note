@@ -6,7 +6,7 @@ comments: true
 
 - [Windows Subsystem for Linux 文档](https://learn.microsoft.com/zh-cn/windows/wsl/)
 
-## WSL2 VHDX 空间回收
+## WSL VHDX 空间回收
 
 WSL2 通过一个虚拟硬盘文件（`ext4.vhdx`）运行 Linux 发行版，当用户在 Linux 环境中安装软件或创建文件时，这个 `.vhdx` 文件会自动增长。但当用户删除文件时，虚拟硬盘文件并不会自动收缩。它只是在文件系统内部将那些空间标记为“可用”，但从 Windows 的角度看，这个虚拟硬盘文件本身的大小没有变化。因此，Windows 中显示的文件大小，实际上是 `.vhdx` 文件的峰值大小，而不是当前实际使用的大小。  
 
@@ -58,3 +58,35 @@ WSL2 通过一个虚拟硬盘文件（`ext4.vhdx`）运行 Linux 发行版，当
     ```
 
     结束后，`.vhdx` 文件占用的空间即被释放。
+
+## WSL 中文字体配置
+
+WSL2 中安装的系统默认没有中文字体，需要自己配置。为节省系统空间，我们可以通过 `fontconfig` 文件让 Linux 系统使用本地的中文字体。操作步骤如下：
+
+1. 创建 `fontconfig` 配置文件
+
+    ```bash
+    sudo nano /etc/fonts/local.conf
+    ```
+
+2. 编辑配置文件
+
+    在打开的文件中，添加以下内容：
+
+    ```xml
+    <?xml version="1.0"?>
+    <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+    <fontconfig>
+        <dir>/mnt/c/Windows/Fonts</dir>
+    </fontconfig>
+    ```
+
+    如果已有内容，在 `<fontconfig>` 与 `</fontconfig>` 标签内添加 `<dir>` 标签即可。保存文件。
+
+3. 刷新字体缓存
+
+    ```bash
+    sudo fc-cache -f -v
+    ```
+    
+    结束后，系统即支持中文字体库。

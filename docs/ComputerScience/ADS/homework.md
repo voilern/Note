@@ -182,3 +182,86 @@
 - D.50%
 
 ## Homework 4
+
+**1-1** The result of inserting keys 1 to $2^k -1$ for any $k>4$ in order into an initially empty skew heap is always a full binary tree.
+
+- T
+
+- F
+
+**1-2** The right path of a skew heap can be arbitrarily long. 
+
+- T
+
+- F
+
+**2-1** Merge the two leftist heaps in the following figure.  Which one of the following statements is FALSE?
+
+![](img/hw4_2-1.png){.center}
+
+- A.2 is the root with 11 being its right child
+
+- B.the depths of 9 and 12 are the same
+
+- C.21 is the deepest node with 11 being its parent
+
+- D.the null path length of 4 is less than that of 2
+
+**2-2** We can perform BuildHeap for leftist heaps by considering each element as a one-node leftist heap, placing all these heaps on a queue, and performing the following step: Until only one heap is on the queue, dequeue two heaps, merge them, and enqueue the result.  Which one of the following statements is FALSE?
+
+- A.in the $k$-th run, $\lceil N/2^k \rceil$ leftist heaps are formed, each contains $2^k$ nodes
+
+- B.the worst case is when $N=2^K$ for some integer $K$
+
+- C.the time complexity $T(N) = O(\frac{N}{2}log 2^0 + \frac{N}{2^2}log 2^1 + \frac{N}{2^3}log 2^2 + \cdots + \frac{N}{2^K}log 2^{K-1})$ for some integer $K$ so that $N=2^K$
+
+- D.the worst case time complexity of this algorithm is $\Theta (NlogN)$
+
+**2-3** Insert keys 1 to 15 in order into an initially empty skew heap.  Which one of the following statements is FALSE?
+
+- A.the resulting tree is a complete binary tree
+
+- B.there are 6 leaf nodes
+
+- C.6 is the left child of 2
+
+- D.11 is the right child of 7
+
+**2-4** Merge the two skew heaps in the following figure.  Which one of the following statements is FALSE?
+
+![](img/hw4_2-4.png){.center}
+
+- A.15 is the right child of 8
+
+- B.14 is the right child of 6
+
+- C.1 is the root
+
+- D.9 is the right child of 3
+
+**5-1** **Merge two leftist heaps**
+
+The function is to merge two leftist heaps H1 and H2.
+
+```c
+PriorityQueue Merge( PriorityQueue H1, PriorityQueue H2 )
+{ 
+  if (H1==NULL) return H2;
+  if (H2==NULL) return H1;
+  if ( ) (3 分)
+    swap(H1, H2);  //swap H1 and H2
+  if ( H1->Left == NULL )
+    ( ) (3 分)
+  else {
+    H1->Right = Merge( H1->Right, H2 );
+    if ( H1->Left->Npl < H1->Right->Npl )
+        SwapChildren( H1 );  //swap the left child and right child of H1
+        ( ) (3 分)
+  }
+  return H1;
+}
+```
+??? note "solution"
+    1. H1->Element > H2->Element
+    2. H1->Left = H2
+    3. H1->Npl = H1->Right->npl + 1

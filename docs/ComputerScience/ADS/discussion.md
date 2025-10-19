@@ -17,7 +17,7 @@
 
 **1-2** What are the disadvantages of inverted file index technology?
 
-## Week 5
+## Week 4
 
 **1-1** **Self-adjusting data structures**
 
