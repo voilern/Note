@@ -9,24 +9,24 @@
         <meta name="author" content="voilern">
       
       
-        <link rel="canonical" href="https://voilern.github.io/Note/ComputerScience/ADS/Lec12/">
+        <link rel="canonical" href="https://voilern.github.io/Note/Research/activation_checkpoint/">
       
       
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>Lecture 12 | Local Search - voilern's Notebook</title>
+        <title>Activation checkpoint - voilern's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -45,24 +45,24 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/css/card.css">
+      <link rel="stylesheet" href="../../stylesheets/css/card.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/css/flink.css">
+      <link rel="stylesheet" href="../../stylesheets/css/flink.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/css/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/css/extra.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
       <link rel="stylesheet" href="https://static.zeoseven.com/zsft/292/main/result.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -90,11 +90,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#lecture-12-local-search" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +100,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="voilern's Notebook" class="md-header__button md-logo" aria-label="voilern's Notebook" data-md-component="logo">
+    <a href="../.." title="voilern's Notebook" class="md-header__button md-logo" aria-label="voilern's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -125,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture 12 | Local Search
+              Activation checkpoint
             
           </span>
         </div>
@@ -238,7 +233,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -266,7 +261,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../FDS/" class="md-tabs__link">
+        <a href="../../ComputerScience/FDS/" class="md-tabs__link">
           
   
   
@@ -291,7 +286,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Research/checkmate/" class="md-tabs__link">
+        <a href="../checkmate/" class="md-tabs__link">
           
   
   
@@ -327,7 +322,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="voilern's Notebook" class="md-nav__button md-logo" aria-label="voilern's Notebook" data-md-component="logo">
+    <a href="../.." title="voilern's Notebook" class="md-nav__button md-logo" aria-label="voilern's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -357,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -455,7 +450,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../FDS/" class="md-nav__link ">
+            <a href="../../ComputerScience/FDS/" class="md-nav__link ">
               
   
   
@@ -530,7 +525,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../ComputerScience/ADS/" class="md-nav__link ">
               
   
   
@@ -565,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lec01/" class="md-nav__link">
+      <a href="../../ComputerScience/ADS/Lec01/" class="md-nav__link">
         
   
   
@@ -588,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lec02/" class="md-nav__link">
+      <a href="../../ComputerScience/ADS/Lec02/" class="md-nav__link">
         
   
   
@@ -611,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lec03/" class="md-nav__link">
+      <a href="../../ComputerScience/ADS/Lec03/" class="md-nav__link">
         
   
   
@@ -634,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lec04/" class="md-nav__link">
+      <a href="../../ComputerScience/ADS/Lec04/" class="md-nav__link">
         
   
   
@@ -657,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Ex01/" class="md-nav__link">
+      <a href="../../ComputerScience/ADS/Ex01/" class="md-nav__link">
         
   
   
@@ -680,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homework/" class="md-nav__link">
+      <a href="../../ComputerScience/ADS/homework/" class="md-nav__link">
         
   
   
@@ -703,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../discussion/" class="md-nav__link">
+      <a href="../../ComputerScience/ADS/discussion/" class="md-nav__link">
         
   
   
@@ -726,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quiz/" class="md-nav__link">
+      <a href="../../ComputerScience/ADS/quiz/" class="md-nav__link">
         
   
   
@@ -780,7 +775,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CO/" class="md-nav__link ">
+            <a href="../../ComputerScience/CO/" class="md-nav__link ">
               
   
   
@@ -815,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CO/ch01/" class="md-nav__link">
+      <a href="../../ComputerScience/CO/ch01/" class="md-nav__link">
         
   
   
@@ -871,7 +866,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../OOP/" class="md-nav__link ">
+            <a href="../../ComputerScience/OOP/" class="md-nav__link ">
               
   
   
@@ -906,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../OOP/lec2/" class="md-nav__link">
+      <a href="../../ComputerScience/OOP/lec2/" class="md-nav__link">
         
   
   
@@ -929,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../OOP/lec3/" class="md-nav__link">
+      <a href="../../ComputerScience/OOP/lec3/" class="md-nav__link">
         
   
   
@@ -989,7 +984,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../CS106L/" class="md-nav__link ">
+            <a href="../../ComputerScience/CS106L/" class="md-nav__link ">
               
   
   
@@ -1024,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS106L/lec1/" class="md-nav__link">
+      <a href="../../ComputerScience/CS106L/lec1/" class="md-nav__link">
         
   
   
@@ -1047,7 +1042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS106L/lec2/" class="md-nav__link">
+      <a href="../../ComputerScience/CS106L/lec2/" class="md-nav__link">
         
   
   
@@ -1070,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS106L/lec3/" class="md-nav__link">
+      <a href="../../ComputerScience/CS106L/lec3/" class="md-nav__link">
         
   
   
@@ -1093,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../CS106L/lec4/" class="md-nav__link">
+      <a href="../../ComputerScience/CS106L/lec4/" class="md-nav__link">
         
   
   
@@ -1147,7 +1142,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Others/" class="md-nav__link ">
+            <a href="../../ComputerScience/Others/" class="md-nav__link ">
               
   
   
@@ -1182,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/wsl/" class="md-nav__link">
+      <a href="../../ComputerScience/Others/wsl/" class="md-nav__link">
         
   
   
@@ -1265,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Research/checkmate/" class="md-nav__link">
+      <a href="../checkmate/" class="md-nav__link">
         
   
   
@@ -1305,61 +1300,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-vertex-cover-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      [案例] The Vertex Cover Problem
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      梅特罗波利斯算法
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      模拟退火
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hopfield-neural-networks" class="md-nav__link">
-    <span class="md-ellipsis">
-      [案例] Hopfield Neural Networks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-maximum-cut-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      [案例] The Maximum Cut Problem
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1378,65 +1318,11 @@
   
 
 
-<h1 id="lecture-12-local-search">Lecture 12 | Local Search<a class="headerlink" href="#lecture-12-local-search" title="Permanent link">¶</a></h1>
+  <h1>Activation checkpoint</h1>
+
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 365 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"></path></svg></span> 17 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 0 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间不到 1 分钟</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">时间匆忙，内容简略</p>
-</div>
-<ul>
-<li>local optimum is a best solution in a neighborhood</li>
-<li>start with a feasible solution and search a better one within the neighborhood</li>
-<li>a local optimum is achieved if no improvement is possible</li>
-</ul>
-<p>即先找到一个可行解，以及量化其优程度的目标函数，再在这个可行解上寻求优化，直到达到局部最优解。</p>
-<hr>
-<h2 id="the-vertex-cover-problem">[案例] The Vertex Cover Problem<a class="headerlink" href="#the-vertex-cover-problem" title="Permanent link">¶</a></h2>
-<p><strong>顶点覆盖问题(vertex cover problem)</strong>指给定一个无向图 <span class="arithmatex">\(G=(V,E)\)</span>，找到一个最小的顶点集 <span class="arithmatex">\(S\subseteq V\)</span>，使得每条边 <span class="arithmatex">\((u,v)\)</span> 都至少有一个端点在 <span class="arithmatex">\(S\)</span> 中（即 <span class="arithmatex">\(u\in S \lor v\in S\)</span>）。</p>
-<p>这个问题的可行解为 <span class="arithmatex">\(S = V\)</span>，即完全覆盖，其目标函数为 <span class="arithmatex">\(cost(S) = |S|\)</span>。即，我们尝试使用 local search 来降低 <span class="arithmatex">\(|S|\)</span>。</p>
-<p>给出几种案例以及可视化，说明局部搜索容易失效。</p>
-<h2 id="_1">梅特罗波利斯算法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p><strong>梅特罗波利斯算法(the Metropolis algorithm)</strong>的过程：</p>
-<blockquote>
-<p>凑合一下，之后有空再改。</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">SolutionType</span><span class="w"> </span><span class="nf">Metropolis</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">   </span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">Define</span><span class="w"> </span><span class="n">constants</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">Start</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">feasible</span><span class="w"> </span><span class="n">solution</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="err">\</span><span class="n">in</span><span class="w"> </span><span class="n">FS</span><span class="w"> </span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="n">S</span><span class="err">’</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Randomly</span><span class="w"> </span><span class="n">chosen</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">N</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="err">’</span><span class="p">);</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MinCost</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CurrentCost</span><span class="p">;</span><span class="w">    </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="err">’</span><span class="p">;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">            </span><span class="n">With</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">probability</span><span class="w"> </span><span class="n">e</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="err">\</span><span class="n">Delta</span><span class="w"> </span><span class="n">cost</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">kT</span><span class="p">)},</span><span class="w"> </span><span class="n">let</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="err">’</span><span class="p">;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="k">else</span><span class="w">  </span><span class="k">break</span><span class="p">;</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">}</span>
-</code></pre></div>
-<p>注：对于case 1，有一定概率可以跳出local optimum得到正确解。但是对case 0，有可能在加1和减1之间无限震荡……
-注：当（温度）T很高时，上坡的概率几乎为1，容易引起底部震荡；当T接近0时，上坡概率几乎为0，接近原始的梯度下降法。</p>
-<hr>
-<h2 id="_2">模拟退火<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p><strong>模拟退火(simulated annealing)</strong></p>
-<hr>
-<h2 id="hopfield-neural-networks">[案例] Hopfield Neural Networks<a class="headerlink" href="#hopfield-neural-networks" title="Permanent link">¶</a></h2>
-<div class="admonition quote">
-<p class="admonition-title">links</p>
-<p>Wikipedia: https://en.wikipedia.org/wiki/Hopfield_network</p>
-</div>
-<hr>
-<h2 id="the-maximum-cut-problem">[案例] The Maximum Cut Problem<a class="headerlink" href="#the-maximum-cut-problem" title="Permanent link">¶</a></h2>
-<div class="admonition quote">
-<p class="admonition-title">links</p>
-<p>Wikipedia: https://en.wikipedia.org/wiki/Maximum_cut</p>
-</div>
-<hr>
 
 
 
@@ -1459,7 +1345,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年9月17日 09:25:47 CST">2025年9月17日 09:25:47</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年10月20日 16:11:41 CST">2025年10月20日 16:11:41</span>
   </span>
 
     
@@ -1469,7 +1355,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年9月17日 09:25:47 CST">2025年9月17日 09:25:47</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年10月20日 16:11:41 CST">2025年10月20日 16:11:41</span>
   </span>
 
     
@@ -1562,12 +1448,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tracking", "navigation.tabs", "navigation.top", "content.code.copy", "content.code.select", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tracking", "navigation.tabs", "navigation.top", "content.code.copy", "content.code.select", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
-        <script src="../../../javascripts/katex.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
