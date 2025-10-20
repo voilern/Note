@@ -129,3 +129,27 @@ void Stash::initialize(Stash* this, int size)
 - 在 C++ 中，一个 `.cpp` 文件是一个编译单元，编译器会将 `.cpp` 文件编译成 `.obj` 文件
 - 链接器会将所有的 `.obj` 文件链接成一个可执行文件
 - 如果要在多个 `.cpp` 文件中共享信息，可以使用 `.h` 头文件
+
+### The header files
+
+- `#include` 会将 `.h` 文件的内容直接复制到 `.cpp` 文件中，一般来说有两种：
+    - `#include "xx.h"`：一般会在当前目录下寻找文件
+    - `#include <xx.h>`：一般会在特定的目录下（取决于编译环境）寻找文件
+    - `#include <xx>`：等效于 `#include <xx.h>`
+- 以下是一个标准的头文件结构，里面的声明仅出现一次，这样可以避免头文件内容被多次包含，从而导致编译失败的问题
+
+```cpp
+#ifndef HEADER_FLAG
+#define HEADER_FLAG
+// Your declarations here...
+#endif  // HEADER_FLAG
+
+#pragma once // Also works
+```
+
+## Makefile
+
+本课程对 Makefile 不做过多展开，笔者对 Makefile 也没有十分了解，在此就不多花篇幅了。也许可供参考的部分资料：
+
+- [Makefile Tutorial](https://makefiletutorial.com/){target="_blank"}
+- [Makefile 教程（上面网站的中文翻译）](https://gavinliu6.github.io/Makefile-Tutorial-zh-CN/#/){target="_blank"}
