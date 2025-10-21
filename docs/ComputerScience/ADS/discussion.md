@@ -28,3 +28,29 @@ If we are content with a data structure that is efficient in only an amortized s
 What are the pros and cons of self-adjusting data structures?
 
 **1-2** For a skew heap, please construct a sequence of operations in which some operations take O(n) time.
+
+## Week 5
+
+**1-1** Please compare the performance of BuildHeap with leftist heaps and binomial queues.
+
+**1-2** What if we simply use some normal tree for heaps without restriction of two child?  For the union procedure why don't we just make one heap the left child of the other heap?
+
+**1-3** We have learnt the 2-3-4 B+tree in which the internal node (other than possibly the root) has two, three, or four children and all leaves have the same depth. In this problem, we shall implement 2-3-4 heaps, which support the mergeable-heap operations.  
+
+The 2-3-4 heaps differ from 2-3-4 trees in the following ways:  
+
+- In 2-3-4 heaps, only leaves store keys, and each leaf $x$ stores exactly one key in the field `key[x]`.  
+- There is no particular ordering of the keys in the leaves; that is, from left to right, the keys may be in any order.  
+- Each internal node $x$ contains a value `small[x]` that is equal to the smallest key stored in any leaf in the subtree rooted at $x$.  
+- The root $r$ contains a field `height [r]` that is the height of the tree.  
+
+Finally, 2-3-4 heaps are intended to be kept in main memory, so that disk reads and writes are not needed.  
+
+Implement the following 2-3-4 heap operations. Each of the operations in parts (a)-(e) should run in $O(log n)$ time on a 2-3-4 heap with $n$ elements. The `UNION` operation in part (f) should run in $O(log n)$ time, where $n$ is the number of elements in the two input heaps.  
+
+- (a) `MINIMUM`, which returns a pointer to the leaf with the smallest key.  
+- (b) `DECREASE-KEY`, which decreases the key of a given leaf $x$ to a given value k ≤ `key[x]`.  
+- \(c) `INSERT`, which inserts leaf $x$ with key $k$.  
+- (d) `DELETE`, which deletes a given leaf $x$.  
+- (e) `EXTRACT-MIN`, which extracts the leaf with the smallest key.  
+- (f) `UNION`, which unites two 2-3-4 heaps, returning a single 2-3-4 heap and destroying the input heaps.
