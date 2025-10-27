@@ -69,6 +69,9 @@ Point::Point(int ix, int iy) {
     x = ix;
     y = iy;
 }
+
+// Use member initializer list to init
+Point::Point(int ix, int iy) : x(ix), y(iy) {}
 ```
 
 ### `::` resolver
@@ -151,5 +154,7 @@ void Stash::initialize(Stash* this, int size)
 
 本课程对 Makefile 不做过多展开，笔者对 Makefile 也没有十分了解，在此就不多花篇幅了。也许可供参考的部分资料：
 
-- [Makefile Tutorial](https://makefiletutorial.com/){target="_blank"}
-- [Makefile 教程（上面网站的中文翻译）](https://gavinliu6.github.io/Makefile-Tutorial-zh-CN/#/){target="_blank"}
+<!-- - [Makefile Tutorial](https://makefiletutorial.com/){target="_blank"}
+- [Makefile 教程（上面网站的中文翻译）](https://gavinliu6.github.io/Makefile-Tutorial-zh-CN/#/){target="_blank"} -->
+- [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html){target="_blank"}  
+- [CSDIY 中提到的 GNU Make 文档](https://seisman.github.io/how-to-write-makefile/overview.html){target="_blank"}  
