@@ -21,5 +21,10 @@
     4. Project 以 2 人为一小组，完成 2 / 7 即可，互评规则与 FDS 一致。
 
 !!! info "说明"
-    本课程的笔记暂时完全来源于 [Isshiki修的ads笔记](https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/){target="_blank"} 
-    
+    本课程笔记参考或引用了以下资料：
+
+    - 数据结构部分笔记来源于 [Isshiki修的ads笔记](https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/){target="_blank"} 
+    - [NoughtQ 的笔记本](https://note.noughtq.top/algorithms/ads/){target="_blank"}
+    - [BruceJin's Notebook](https://brucejqs.github.io/MyNotebook/blog/Computer%20Science/ADS/){target="_blank"}
+    - wyy 2024 春夏 ads 辅学讲义
+    - [OI Wiki](https://oi-wiki.org/){target="_blank"}

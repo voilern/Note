@@ -54,3 +54,9 @@ Implement the following 2-3-4 heap operations. Each of the operations in parts (
 - (d) `DELETE`, which deletes a given leaf $x$.  
 - (e) `EXTRACT-MIN`, which extracts the leaf with the smallest key.  
 - (f) `UNION`, which unites two 2-3-4 heaps, returning a single 2-3-4 heap and destroying the input heaps.
+
+## Week 6
+
+**1-1** When solving the Turnpike Reconstruction Problem, in Step 3 we always find the next "largest" distance and check.  How about finding the next “smallest” distance and check?
+
+**1-2** How would you design the evaluation function for Gobang （五子棋）?

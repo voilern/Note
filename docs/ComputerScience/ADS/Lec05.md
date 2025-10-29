@@ -1,4 +1,4 @@
-# Lecture 5 | Binomial Queue
+# Lecture 5: Binomial Queue
 
 ## Binomial Queue
 

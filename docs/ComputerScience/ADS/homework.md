@@ -345,3 +345,29 @@ BinTree Recur_Find( BinTree T, ElementType X )
     return result;
 }
 ```
+
+## Homework 6
+
+**R2-1** In the Tic-tac-toe game, a "goodness" function of a position is defined as $f(P) = W_{computer} - W_{human}$where $W$ is the number of potential wins at position $P$.In the following figure, O represents the computer and X the human. What is the goodness of the position of the figure?
+
+![](./img/hw6_2-1.png){.center}
+
+- A.-1
+
+- B.0
+
+- C.4
+
+- D.5
+
+**R2-2** Given the following game tree, which node is the first one to be pruned with α-β pruning algorithm?
+
+![](./img/hw6_2-2.png){.center}
+
+- A.a
+
+- B.b
+
+- C.c
+
+- D.d

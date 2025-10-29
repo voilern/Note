@@ -112,7 +112,8 @@ extra_javascript:
 
 plugins:
   - search
-  - statistics
+  - statistics:
+      # exclude_path: 'ComputerScience[/\\\\]OOP[/\\\\]lab.md'
   - git-revision-date-localized:
       type: datetime
       timezone: Asia/Shanghai
@@ -133,7 +134,8 @@ nav:
       - ComputerScience/ADS/Lec03.md
       - ComputerScience/ADS/Lec04.md
       - ComputerScience/ADS/Lec05.md
-      - ComputerScience/ADS/Lec06.md
+      # - ComputerScience/ADS/Lec06.md
+      - ComputerScience/ADS/lec06_v.md
       # - ComputerScience/ADS/Lec07.md
       # - ComputerScience/ADS/Lec08.md
       # - ComputerScience/ADS/Lec09.md
@@ -155,6 +157,7 @@ nav:
       - ComputerScience/OOP/lec2.md
       - ComputerScience/OOP/lec3.md
       - ComputerScience/OOP/lec4.md
+      # - ComputerScience/OOP/lab.md
     - CS106L:
       - ComputerScience/CS106L/index.md
       - ComputerScience/CS106L/lec1.md

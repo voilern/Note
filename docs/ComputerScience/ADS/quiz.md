@@ -306,3 +306,67 @@ BinQueue BinQueue_Insert( ElementType X, BinQueue H )
 }
 ```
 
+## Week 6
+
+**R1-1** In the 4-queens problem, ($x_1$, $x_2$, $x_3$, $x_4$) correspond to the 4 queens'  column indices.  During backtracking, (1, 4, 2, ?) will be checked before (2, 4, 1, ?), and none of them has any solution in their branches.  
+
+- T
+
+- F
+
+**R1-2** What makes the time complexity analysis of a backtracking algorithm very difficult is that the number of solutions that do satisfy the restriction is hard to estimate.
+
+- T
+
+- F
+
+**R1-3** It is guaranteed that an exhaustive search can always find the solution in finite time.
+
+- T
+
+- F
+
+**R2-1** Given the following game tree, the red node will be pruned with α-β pruning algorithm if and only if __.
+
+![](./img/quiz6_2-1.png){.center}
+
+- A.$x\geq9$
+
+- B.$6 \leq x\leq9$
+
+- C.$6 \leq x\leq13$
+
+- D.$x\geq13$
+
+**R2-2** Given the distance set D={1,1,2,2,2,2,3,3,3,4,5,5,6,6,8} in a Turnpike Reconstruction problem, first it can be sure that x1=0 and x6=8.  Which of the following possible solutions will be checked next?
+
+- A.x2=2,  x5=6
+
+- B.x2=1,  x5=5
+
+- C.x2=1,  x5=6
+
+- D.x3=3,  x5=6
+
+**R2-3** Given the following game tree, if node b is pruned with α-β pruning algorithm, which of the following statements about the value of node a is correct?
+
+![](./img/quiz6_2-3.png){.center}
+
+- A.less than 65
+
+- B.greater than 65
+
+- C.less than 68
+
+- D.greater than 68
+
+**R2-4** To solve the turnpike reconstruction problem with given distances {1,1,3,3,4,4,4,5,7,8},which of the following statements is true?
+
+- A.x1=0, x3=4, x5=8
+
+- B.x1=0, x2=1, x3=5
+
+- C.x1=0, x2=3, x3=5
+
+- D.x3=4, x4=6, x5=8
+

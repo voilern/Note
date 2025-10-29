@@ -1,4 +1,4 @@
-# Lecture 6 | Backtracing
+# Lecture 6: Backtracing
 
 !!! quote "link"
     OI Wiki: https://oi-wiki.org/search/backtracking/
