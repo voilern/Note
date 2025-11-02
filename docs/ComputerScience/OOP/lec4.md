@@ -65,7 +65,7 @@ RAII（Resource Acquisition Is Initialization）是 C++ 中惯用的一种编程
 
 ## Initialization
 
-此处对 C++ 中的初始化介绍较为简略，可以参考 [CS106L - Lecture 3: Initialization & References](../OOP/lec3.md) 中的笔记。  
+此处对 C++ 中的初始化介绍较为简略，可以参考 [CS106L - Lecture 3: Initialization & References](../CS106L/lec3.md) 中的笔记。  
 
 ### Non Static Data Member Init (C++ 11)
 

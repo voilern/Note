@@ -168,4 +168,5 @@ nav:
       - ComputerScience/Others/index.md
       - ComputerScience/Others/wsl.md
   - Research:
+    - Research/checkpoint.md
     - Research/checkmate.md
