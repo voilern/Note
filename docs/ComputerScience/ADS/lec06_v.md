@@ -56,5 +56,4 @@ bool Backtracking (int i) {
 ## Tic-tac-toe
 
 
-
 ## 五子棋
