@@ -120,6 +120,7 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
+      enable_git_follow: false
   - glightbox
 
 nav:
@@ -136,6 +137,7 @@ nav:
       - ComputerScience/ADS/Lec05.md
       # - ComputerScience/ADS/Lec06.md
       - ComputerScience/ADS/lec06_v.md
+      # - ComputerScience/ADS/lec07_v.md
       # - ComputerScience/ADS/Lec07.md
       # - ComputerScience/ADS/Lec08.md
       # - ComputerScience/ADS/Lec09.md
@@ -151,7 +153,7 @@ nav:
       - ComputerScience/ADS/quiz.md
     - 计算机组成:
       - ComputerScience/CO/index.md
-      - ComputerScience/CO/ch01.md
+      - ComputerScience/CO/ch1.md
     - 面向对象程序设计:  
       - ComputerScience/OOP/index.md
       - ComputerScience/OOP/lec2.md
@@ -164,9 +166,11 @@ nav:
       - ComputerScience/CS106L/lec2.md
       - ComputerScience/CS106L/lec3.md
       - ComputerScience/CS106L/lec4.md
-    - Others:
-      - ComputerScience/Others/index.md
-      - ComputerScience/Others/wsl.md
   - Research:
     - Research/checkpoint.md
     - Research/checkmate.md
+  - Others:
+    # - 概率论与数理统计:
+    #   - Others/PMS/index.md
+    #   - Others/PMS/ch1.md
+    - Others/wsl.md
