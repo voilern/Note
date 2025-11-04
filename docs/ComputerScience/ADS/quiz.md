@@ -370,3 +370,57 @@ BinQueue BinQueue_Insert( ElementType X, BinQueue H )
 
 - D.x3=4, x4=6, x5=8
 
+## Week 7
+
+**R1-1** For the recurrence equation $T(N)=aT(N/b)+f(N)$, if $af(N/b)=Kf(N)$ for some constant $K>1$, then $T(N)=\Theta(f(N))$. 
+
+- T
+
+- F
+
+**R1-2** If devide-and-conquer strategy is used to find the closest pair of points in a plane, unless the points are sorted not only by their $x$ coordinates but also by their $y$ coordinates, it would be impossible to solve it in a time of  $O(NlogN)$, where $N$ is the number of points.  
+
+- T
+
+- F
+
+**R1-3** For the recurrence equation $T(N)=8T(N/2)+N^3logN$，we obtain $T(N)=O(N^3logN)$ according to the Master Theorem.
+
+- T
+
+- F
+
+**R1-4** For the recurrence equation $T(N)=aT(N/b)+f(N)$, if $af(N/b)=f(N)$, then $T(N)=\Theta (f(N) log_b N)$. 
+
+- T
+
+- F
+
+**R2-1** How many of the following sorting methods use(s) Divide and Conquer algorithm?  
+
+- Candidate List:
+    - Heap Sort
+    - Insertion Sort
+    - Merge Sort
+    - Quick Sort
+    - Selection Sort
+    - Shell Sort
+
+- A.2
+
+- B.5
+
+- C.4
+
+- D.3
+
+**R2-2** Suppose that the devide-and-conquer strategy is used to find the maximum and the minimum of $N$ positive numbers.  At each step, the problem is divided into 2 sub-problems of size $N/2$. Then the time recurrences is $T(N) = 2T(N/2)+f(N)$, where $f(N)$ is ____.
+
+- A.$\Theta (logN)$
+
+- B.$N/2$
+
+- C.$O(1)$
+
+- D.$\Omega (N)$
+

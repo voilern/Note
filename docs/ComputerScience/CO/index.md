@@ -20,3 +20,9 @@
 
     1. 实验部分总分不超过 100 分；
     2. 期末为英文卷面，卷面成绩不到 45 分总评即不及格。
+
+!!! info "致谢"
+    本课程笔记参考或引用了以下资料：
+
+    - 《计算机组成与设计：硬件软件接口 RISC-V 版》Computer Organization and Design - The Hardware / Software Interface, Risc-V Edition
+    - [咸鱼暄的代码空间 - 计算机组成课程笔记](https://xuan-insr.github.io/computer_organization/){target="_blank"}

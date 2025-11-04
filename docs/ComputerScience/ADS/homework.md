@@ -348,7 +348,7 @@ BinTree Recur_Find( BinTree T, ElementType X )
 
 ## Homework 6
 
-**R2-1** In the Tic-tac-toe game, a "goodness" function of a position is defined as $f(P) = W_{computer} - W_{human}$where $W$ is the number of potential wins at position $P$.In the following figure, O represents the computer and X the human. What is the goodness of the position of the figure?
+**2-1** In the Tic-tac-toe game, a "goodness" function of a position is defined as $f(P) = W_{computer} - W_{human}$where $W$ is the number of potential wins at position $P$.In the following figure, O represents the computer and X the human. What is the goodness of the position of the figure?
 
 ![](./img/hw6_2-1.png){.center}
 
@@ -360,7 +360,7 @@ BinTree Recur_Find( BinTree T, ElementType X )
 
 - D.5
 
-**R2-2** Given the following game tree, which node is the first one to be pruned with α-β pruning algorithm?
+**2-2** Given the following game tree, which node is the first one to be pruned with α-β pruning algorithm?
 
 ![](./img/hw6_2-2.png){.center}
 
@@ -371,3 +371,46 @@ BinTree Recur_Find( BinTree T, ElementType X )
 - C.c
 
 - D.d
+
+## Homework 7
+
+**2-1** When solving a problem with input size $N$ by divide and conquer, if at each stage the problem is divided into 8 sub-problems of equal size $N/3$, and the conquer step takes $O(N^2 logN)$ to form the solution from the sub-solutions, then the overall time complexity is __.
+
+- A.$O(N^2 logN)$
+
+- B.$O(N^2 log^2 N)$
+
+- C.$O(N^3 logN)$
+
+- D.$O(N^{log8/log3})$
+
+**2-2** To solve a problem with input size $N$ by divide and conquer algorithm, among the following methods, __ is the worst.
+
+- A.divide into 2 sub-problems of equal complexity $N/3$ and conquer in $O(N)$
+
+- B.divide into 2 sub-problems of equal complexity $N/3$ and conquer in $O(NlogN)$
+
+- C.divide into 3 sub-problems of equal complexity $N/2$ and conquer in $O(N)$
+
+- D.divide into 3 sub-problems of equal complexity $N/3$ and conquer in $O(NlogN)$
+
+**2-3** 3-way-mergesort : Suppose instead of dividing in two halves at each step of the mergesort, we divide into three one thirds, sort each part, and finally combine all of them using a three-way-merge.  What is the overall time complexity of this algorithm ?
+
+- A.$O(n(\log^2 n))$
+
+- B.$O(n^2 \log n)$
+
+- C.$O(n\log n)$
+
+- D.$O(n)$
+
+**2-4** Which one of the following is the lowest upper bound of $T(n)$ for the following recursion  $T(n) = 2T(\sqrt{n}) + \log n$?
+
+- A.$O(\log n\log \log n)$
+
+- B.$O(\log^2 n)$
+
+- C.$O(n\log n)$
+
+- D.$O(n^2)$
+

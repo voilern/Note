@@ -60,3 +60,13 @@ Implement the following 2-3-4 heap operations. Each of the operations in parts (
 **1-1** When solving the Turnpike Reconstruction Problem, in Step 3 we always find the next "largest" distance and check.  How about finding the next “smallest” distance and check?
 
 **1-2** How would you design the evaluation function for Gobang （五子棋）?
+
+## Week 7
+
+**1-1** Three-way-mergesort : Suppose instead of dividing in two halves at each step of the mergesort, we divide into three one thirds, sort each part, and finally combine all of them using a three-way-merge. 
+
+What is the overall time complexity of this algorithm for sorting n elements?  Prove it.
+
+How about k-way merge?
+
+**1-2** Please show an example of how a problem can be partitioned into sub-problems, yet divide and conquer method does not work.
