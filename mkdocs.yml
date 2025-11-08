@@ -154,6 +154,7 @@ nav:
     - 计算机组成:
       - ComputerScience/CO/index.md
       - ComputerScience/CO/ch1.md
+      - ComputerScience/CO/ch2.md
       - ComputerScience/CO/ch3.md
     - 面向对象程序设计:  
       - ComputerScience/OOP/index.md
