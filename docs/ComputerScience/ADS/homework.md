@@ -360,6 +360,11 @@ BinTree Recur_Find( BinTree T, ElementType X )
 
 - D.5
 
+??? note "Solution"
+    正确答案：B
+
+    这里对 potential wins 的定义为当前局面下所有可能取胜的线路，因此 $W_{\text{computer}} = 3$，$W_{\text{human}} = 3$，故 $f(P) = 3 - 3 = 0$。
+
 **2-2** Given the following game tree, which node is the first one to be pruned with α-β pruning algorithm?
 
 ![](./img/hw6_2-2.png){.center}

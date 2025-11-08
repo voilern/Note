@@ -1,5 +1,8 @@
 # Lecture 4: Leftist Heap & Skew Heap
 
+!!! info "说明"
+    本篇笔记来源于 [Isshiki修's Notebook - ADS 课程笔记](https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/){target="_blank"}
+
 ## Leftist Heap
 
 !!! quote "link"

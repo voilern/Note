@@ -1,6 +1,9 @@
 # Lecture 2: Red Black Tree & B+ Tree
 
 !!! info "说明"
+    本篇笔记来源于 [Isshiki修's Notebook - ADS 课程笔记](https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/){target="_blank"}
+
+!!! info "说明"
     而为了提高笔记整理效率，可能会考虑用更多的引用和更简单的语言。如果您觉得有哪里说的不够清楚，请直接在评论区狠狠 blame 我！
 
 ---

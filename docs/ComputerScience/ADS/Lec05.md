@@ -1,5 +1,8 @@
 # Lecture 5: Binomial Queue
 
+!!! info "说明"
+    本篇笔记来源于 [Isshiki修's Notebook - ADS 课程笔记](https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/){target="_blank"}
+
 ## Binomial Queue
 
 堆的其中一个应用就是优先队列。本节要介绍的**二项队列(Binomial Queue)**也是优先队列的一种实现，只不过不同于之前我们用一个堆维护优先队列，二项队列同时维护了具有不同特征的若干队列。
