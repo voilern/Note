@@ -26,3 +26,4 @@
 
     - 《计算机组成与设计：硬件软件接口 RISC-V 版》Computer Organization and Design - The Hardware / Software Interface, Risc-V Edition
     - [咸鱼暄的代码空间 - 计算机组成课程笔记](https://xuan-insr.github.io/computer_organization/){target="_blank"}
+    - RISC-V 指令的 css 样式来自 [鹤翔万里的笔记本](https://note.tonycrane.cc/){target="_blank"}
