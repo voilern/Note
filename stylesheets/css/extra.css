@@ -11,3 +11,67 @@ font-weight: normal;
     margin-left: auto;
     margin-right: auto;
 }
+
+/* risc-v 指令字段样式 */
+.riscv-table {
+  width: 100%;
+  display: inline-table;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.riscv-table-node {
+  text-align: center;
+  padding: 0.2em;
+  border: 0.04rem solid var(--md-default-fg-color);
+}
+
+.riscv-table-node-little {
+  text-align: center;
+  padding: 0.1em;
+  border: 0.04rem solid var(--md-default-fg-color);
+}
+
+.riscv-table-numnode {
+  font-size: .4rem;
+}
+
+.riscv-table-undernode {
+  font-size: .6rem;
+  text-align: center;
+}
+
+.riscv-table-numnodel {
+  font-size: .4rem;
+  text-align: left;
+}
+
+.riscv-table-numnoder {
+  font-size: .4rem;
+  text-align: right;
+}
+
+@media (max-width: 700px) {
+  .riscv-table-node, .riscv-table-node-little {
+    font-size: .6rem;
+  }
+}
+
+@media (max-width: 610px) {
+  .riscv-table-node, .riscv-table-node-little {
+    font-size: .5rem;
+  }
+}
+
+@media (max-width: 602px) {
+  .riscv-table-node, .riscv-table-node-little {
+    overflow-x: scroll;
+    word-wrap: normal;
+  }
+  .riscv-table-numnoder {
+    font-size: 0px;
+  }
+  .riscv-table-numnodel {
+    word-wrap: normal;
+  }
+}
