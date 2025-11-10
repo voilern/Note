@@ -139,3 +139,149 @@ f(2L);
 - `f('a')`: `char -> short` 是整型提升（Promotion），而 `char -> double` 是标准转换（Conversion），C++ 规定提升的优先级高于标准转换，因此编译器会调用 `f(short i)`  
 - `f(2)`: `int -> short` 与 `int -> double` 都是标准转换，两个转换的优先级相同，产生歧义  
 - `f(2L)`: `long -> short` 与 `long -> double` 都是标准转换，同样会产生歧义
+
+## Constant Objects
+
+### Constant Objects
+
+在 C++ 中，我们可以将对象声明为 `const`，这表示该对象在初始化后其状态不能被修改。
+
+```cpp
+class MyClass {
+    int value;
+public:
+    MyClass(int v) : value(v) {}
+    void setValue(int v) { value = v; }     // 非 const 成员函数
+    int getValue() const { return value; }  // const 成员函数
+};
+
+int main() {
+    const MyClass obj(10);
+    // obj.setValue(20);        // const 对象不能调用非 const 成员函数
+    int val = obj.getValue();   // const 对象可以调用 const 成员函数
+}
+```
+
+`const` 对象必须在创建时初始化（即通过构造函数）。编译器会限制 `const` 对象，使其只能调用 `const` 成员函数。
+
+### Constant Member Functions
+
+为了能让 `const` 对象调用成员函数，我们需要将这些函数声明为 `const`，`const` 关键字必须在函数的声明和定义中都出现。`const` 成员函数在函数签名末尾，即参数列表之后。`const` 成员函数承诺不会修改对象的数据成员，任何尝试修改数据成员或调用其它非 `const` 成员函数的行为都会导致编译错误。
+
+```cpp
+class Date {
+    int day;
+public:
+    int set_day(int d) {
+        day = d;            // OK, non-const so can modify
+    }
+    int get_day() const {
+        // day++;           // ERROR: 试图修改数据成员 
+        // set_day(12);     // ERROR: 调用非 const 成员 
+        return day;         // OK 
+    }
+};
+
+void main() {
+    Date when (1,1,2001);   // non-const object
+    when.get_day();         // OK
+    when.set_day(13);       // OK
+
+    const Date birthday (12,25,1994);   // const object
+    birthday.get_day();                 // OK
+    // birthday.set_day(14);            // ERROR 
+}
+```
+
+在 `const` 成员函数内部，所有非 `static` 的成员变量都变为只读。
+
+### Compile-time constants
+
+```cpp
+class HasArray {
+    const int size;
+    int array[size];    // ERROR
+}
+```
+
+若想在类中使用一个常量来定义数组大小，不能使用普通的 `const` 成员。我们有两种方法，第一种是将 `size` 声明为 `static const`。`static` 意味着该成员每个类只有一个，而不是每个对象各一个。
+
+```cpp
+class HasArray {
+    static const int size;
+    int array[size];    // OK
+}
+```
+
+另一种是利用 `anonymous enum hack`：
+
+```cpp
+class HasArray {
+    enum { size = 100 };
+    int array[size];    // OK
+}
+```
+
+### `mutable`
+
+有时，我们希望某个成员变量即使在 `const` 成员函数中也能被修改（例如用于缓存、调试计数等）。这时可以使用 `mutable` 关键字声明该成员。
+
+```cpp
+class Counter {
+    mutable int accessCount = 0;
+    int value;
+public:
+    int getValue() const {
+        accessCount++;      // OK
+        return value;
+    }
+};
+```
+
+## Type of Function Parameters and Return Value
+
+### Way in
+
+以下有几种在 C++ 中传参的方式： 
+
+- `void f(Student i)`：按值传递。函数会创建对象 `i` 的一个完整副本
+- `void f(Student *p)`：按指针传递。相较于上一种写法更优，传递对象在内存中的指针
+- `void f(Student& i)`：按引用传递。类似于上一种写法，传递对象的引用
+
+但以上写法都会使得对象的作用域扩大，这是我们不希望并且十分危险的。对于不希望对其进行修改的对象，更加推荐的写法是按常量引用传递。即 `void f(const Student& i)`。
+
+### Way out
+
+- `Student f()`：按值返回。函数返回一个新的对象副本
+- `Student *f()`：按指针返回。返回一个指向对象的指针，注意此时应避免返回指向函数局部变量的指针，因为当函数的生命周期结束时局部变量会被销毁，而指针仍然指向原来的内存，这会造成一个指向无效内存的悬挂指针。当然我们可以返回指向堆内存的指针，这种写法是允许的，但实际上也应该尽可能避免
+- `Student& f()`：按引用返回。类似地，我们也不应返回指向局部变量的引用
+
+```cpp
+char *foo() {
+    char *p;
+    p = new char[10];
+    strcpy(p, "something");
+    return p;
+}
+
+void bar() {
+    char *p = foo();
+    printf("%s", p);
+    delete[] p;
+}
+```
+
+在上面的例子中，`foo()` 返回了一个通过 `new` 在堆上申请的局部指针，`bar()` 接受这个指针，使用并 `delete[]`，因此 `p` 可以跨函数传递。
+
+### Tips
+
+以下是一些推荐的写法：
+
+- 传入
+    - 需要存储时传递对象
+    - 需要获取值时传递 `const` 指针或引用
+    - 需要修改时传递指针或引用
+- 传出 / 返回
+    - 若返回值为函数中新创建的对象，按值返回
+    - 仅返回所传入参数的指针或引用 （即确保返回的指针/引用指向的内存在函数结束后依然有效）
+    - 不要在函数中 `new` 一个对象并返回其原始指针

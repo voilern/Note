@@ -221,10 +221,11 @@ bne     rs1, rs2, L1
     一般来说，测试相反的条件来进行跳转能够使得代码更有效率，因此我们采用 `bne` 指令跳转至 `Else` 分支。在 if 语句的结尾部分，为使得程序正确运行分支，我们引入了无条件分支 `beq x0, x0, Exit`，表示遇到该指令时程序必须分支。
 
     ```asm
-            bne     x22, x23, Else      // go to Else if i != j
-            add     x19, x20, x21       // f = g + h (skipped if i != j)
-            beq     x0, x0, Exit        // if 0 == 0, go to Exit
-    Else:   sub     x19, x20, x21       // f = g - h (skipped if i == j)
+        bne     x22, x23, Else      // go to Else if i != j
+        add     x19, x20, x21       // f = g + h (skipped if i != j)
+        beq     x0, x0, Exit        // if 0 == 0, go to Exit
+    Else:   
+        sub     x19, x20, x21       // f = g - h (skipped if i == j)
     Exit:        
     ```
 
@@ -241,12 +242,13 @@ bne     rs1, rs2, L1
     首先需要将 `save[i]` 加载到寄存器中，为此我们需要得到它的地址，即 `i * 8 + x25`，而 `i * 8` 相当于 `i << 3`，因此我们有下面的 RISC-V 汇编代码：
 
     ```asm
-    Loop:   slli    x10, x22, 3     // Temp reg x10 = i * 8
-            add     x10, x10, x25   // x10 = address of save[i]
-            ld      x9, 0(x10)      // Temp reg x9 = save[i]
-            bne     x9, x24, Exit   // go to Exit if save[i] != k
-            addi    x22, x22, 1     // i = i + 1
-            beq     x0, x0, Loop    // go to Loop
+    Loop:   
+        slli    x10, x22, 3     // Temp reg x10 = i * 8
+        add     x10, x10, x25   // x10 = address of save[i]
+        ld      x9, 0(x10)      // Temp reg x9 = save[i]
+        bne     x9, x24, Exit   // go to Exit if save[i] != k
+        addi    x22, x22, 1     // i = i + 1
+        beq     x0, x0, Loop    // go to Loop
     Exit:
     ```
 
@@ -289,19 +291,21 @@ RISC-V 为过程调用分配寄存器时约定：
 - `x10` - `x17`：八个参数寄存器，用于传递参数或返回值
 - `x1`：一个返回指令地址寄存器，通常称为程序计数器（program counter，PC），用于返回到起始点
 
-RISC-V 包含一个仅用于过程的指令 `jal`（jump and link），即跳转到某个地址的同时将下一条指令的地址保存到目标寄存器 `rd`。
+RISC-V 包含一个仅用于过程的指令 `jal`（jump and link），即跳转到某个地址的同时将下一条指令的地址保存到目标寄存器 `rd`。由于 RISC-V 中指令都为 32 位长，因此下一条指令的地址即为 `PC+4`。
 
 ```asm
+jal     rd, imm
 jal     x1, ProcedureAddress    // jump to ProcedureAddress and write return address PC+4 to x1
 ```
 
-为了支持过程返回，RISC-V 中还有 `jalr` 指令，用于处理 case 语句。
+为了支持过程返回，RISC-V 中还有 `jalr`（jump and link register）指令，用于处理 case 语句。
 
 ```asm
-jalr    x0, 0(x1)
+jalr    rd, imm(rs1)
+jalr    x0, 0(x1)       // jump to address restored in x1 and write return address PC+4 to x0 (actually deserted here)
 ```
 
-目标寄存器中保存返回地址，通常使用 `x0` 作为目标寄存器，以丢弃返回地址。同时指令跳转回到存储在寄存器 `x1` 中的地址。
+目标寄存器中保存返回地址，通常使用 `x0` 作为目标寄存器，以丢弃返回地址。同时指令跳转回到存储在寄存器 `x1` 中的地址。`jalr` 中的 `imm` 作为偏移量，在基址已知、目标地址需要计算的场景（如动态链接）中使用。
 
 通过使用 `x0` 作为目标寄存器，`jal` 也可用于实现过程内的无条件跳转。由于 `x0` 硬连线到 0，其效果是丢弃返回地址。
 
@@ -309,13 +313,65 @@ jalr    x0, 0(x1)
 jal     x0, Label   // Unconditionally branch to label
 ```
 
+=== "例题：switch-case 语句"
+    变量 `f` - `k` 对应寄存器 `x20` - `x25`，寄存器 `x5` 的值为 4，将以下 C 代码片段编译为 RISC-V 汇编。
+    
+    ```c
+    switch(k) {
+        case 0: 
+            f = i + j; 
+            break;
+        case 1:
+            f = g + h;
+            break;
+        case 2:
+            f = g - h;
+            break;
+        case 3:
+            f = i - j;
+            break;
+    }
+    ```
+
+    首先通过 `blt` 与 `bge` 判断边界条件，再通过算术运算得到指令在 JumpTable 中的地址，从内存中加载到寄存器 `x7` 中，用 `jalr` 跳转到 `x7` 存储地址（即 `L0` 等标签的地址）的指令处并执行，同时将 `PC + 4` 即 `Exit` 标签的地址保存在 `x1` 中，当执行 `case` 语句时即可通过 `jalr` 跳回到 `Exit`。我们使用一组 `jalr` 实现了 `switch-case` 分支语句。
+    
+    ```asm
+        blt     x25, x0, Exit   // test if k < 0
+        bge     x25, x5, Exit   // test if k >= 4
+        slli    x7, x25, 3      // temp reg x7 = 8 * k
+        add     x7, x7, x6      // x7 = address of JumpTable[k]
+        ld      x7, 0(x7)       // temp reg x7 gets JumpTable[k]
+        jalr    x1, 0(x7)       // jump based on register x7 (entrance)
+    Exit:
+    ```
+
+    其中，jump address table 为 `x7 = x6 + 8 * k`，对应 `L0` 到 `L3`。Memory 中存放 `L0` 到 `L3` 的具体指令：
+
+    ```asm
+    L0:     
+        add     x20, x23, x24   // k = 0 so f gets i + j
+        jalr    x0, 0(x1)       // end of this case so go to Exit
+    L1:     
+        add     x20, x21, x22   // k = 1 so f gets g + h
+        jalr    x0, 0(x1)       // end of this case so go to Exit
+    L2:    
+        sub     x20, x21, x22   // k = 2 so f gets g - h
+        jalr    x0, 0(x1)       // end of this case so go to Exit
+    L3:     
+        sub     x20, x23, x24   // k = 3 so f gets i - j
+        jalr    x0, 0(x1)       // end of switch statement
+    ```
+
+    课件中的 `$s0` 等是 RISC-V 寄存器的 ABI（应用二进制接口）命名方式，可理解为助记符名称。`$s0` 实际上指向的是 `x8` 保存寄存器，则 `add $s0, $s3, $s4` 应为 `add x8, x9, x18`，与题干不符，在这里修改为正确的代码。
+
+
 ### Using More Registers
 
 对于一个需要比 8 个参数寄存器更多寄存器的过程，必须将寄存器换出到存储当中。用于换出寄存器的数据结构是栈（stack），它需要一个指向栈中最新分配地址的指针，以指示下一个过程应该放置换出寄存器的位置或寄存器旧值的存放位置。在 RISC-V 中，栈指针（stack pointer）是寄存器 `x2`，也成为 `sp`。将数据放入栈中称为压栈（push），从栈中移除数据称为弹栈（pop）。
 
 按照历史惯例，栈按照从高到低的地址顺序排列，即可以通过减栈指针将值压栈，通过增加栈指针将值弹栈。
 
-=== "例题"
+=== "例题：过程调用"
     将以下 C 代码片段编译为 RISC-V 汇编代码，其中 g, h, i, j 分别对应参数寄存器 x10, x11, x12, x13。f 对应于 x20。编译后的程序从 `leaf_example` 过程标号开始。（实际上数据类型为 `long long int`，此处为方便起见写为 `int`）
 
     ```c
@@ -352,9 +408,36 @@ jal     x0, Label   // Unconditionally branch to label
 
     ![](./img/ch2_5.png){.center}
 
-示例中使用了临时寄存器，并假设其旧值必须被保存和恢复。为避免保存和恢复一个其值从未被使用过的寄存器，RISC-V 将 19 个寄存器分为两组：
+示例中使用了两个仅在过程中使用的临时寄存器 `x5` 和 `x6`，并假设其旧值必须被保存和恢复。为避免保存和恢复一个其值从未被使用过的寄存器，RISC-V 将 19 个寄存器分为两组：
 
-- `x5` - `x7`，`x28` - `x31`：临时寄存器，在过程调用中不被被调用者（被调用的过程）保存
-- `x8` - `x9`，`x18` - `x27`：保存寄存器（saved register），在过程调用中必须被保存。（一旦使用，由被调用者保存并恢复）
+- `x5` - `x7`，`x28` - `x31`：临时寄存器，在过程调用中不被被调用者（callee，被调用的过程）保存。
+- `x8` - `x9`，`x18` - `x27`：保存寄存器（saved register），在过程调用中必须被保存，一旦使用，由被调用者保存并恢复。
+
+这一约定可以减少寄存器的换出。在上例中，`x5` 与 `x6` 的压栈弹栈过程是不必要的，但仍须保存并恢复 `x20`，因为被调用者需要返回该值，即假定调用者需要该值。
 
 ### Nested Procedures
+
+不调用其它过程的过程称为叶子（leaf）过程。当各个过程间存在嵌套时，可能发生潜在的寄存器冲突。一种解决方法是将其它所有必须保存的寄存器压栈，即：
+
+- 调用者将所有调用后还需要的参数寄存器（`x10` - `x17`）或临时寄存器（`x5` - `x7`，`x28` - `x31`）压栈
+- 被调用者将返回地址寄存器 `x1` 和被调用者使用的保存寄存器（`x8` - `x9`，`18` - `x27`）压栈
+
+=== "例题：阶乘的递归实现"
+    将以下 C 代码片段编译为 RISC-V 汇编。
+
+    ```c
+    long long int fact(long long int n) {
+        if (n < 1) return (1);
+        else return (n * fact(n - 1));
+    }
+    ```
+
+    参数变量 `n` 对应参数寄存器 `x10`。编译后的程序从过程的标签开始，在栈中保存两个寄存器，返回地址和 `x10`。
+
+    ```asm
+    fact:
+        addi    sp, sp, -16
+        sd      x1, 8(sp)
+        sd      x10, 0(sp)
+
+    ```
