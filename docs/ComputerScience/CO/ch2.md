@@ -422,6 +422,8 @@ jal     x0, Label   // Unconditionally branch to label
 - 调用者将所有调用后还需要的参数寄存器（`x10` - `x17`）或临时寄存器（`x5` - `x7`，`x28` - `x31`）压栈
 - 被调用者将返回地址寄存器 `x1` 和被调用者使用的保存寄存器（`x8` - `x9`，`18` - `x27`）压栈
 
+
+
 === "例题：阶乘的递归实现"
     将以下 C 代码片段编译为 RISC-V 汇编。
 
@@ -432,12 +434,65 @@ jal     x0, Label   // Unconditionally branch to label
     }
     ```
 
-    参数变量 `n` 对应参数寄存器 `x10`。编译后的程序从过程的标签开始，在栈中保存两个寄存器，返回地址和 `x10`。
+    编译为 RISC-V 汇编后可以分为以下几个过程：
+        
+    - 参数变量 `n` 对应参数寄存器 `x10`。编译后的程序从过程的标签开始，将返回地址（在程序最开始时是调用 `fact` 的下一条指令，在 `fact` 过程调用中为 `fact`(n-1) 下一条指令，即 `addi x6, x10, 0` 的地址）和 `x10` 压入栈中；
+    - 判断递归条件，若 `n ≥ 1` 则跳转到 `L1` 标签处继续递归，若 `n == 0` 则执行基本情况；
+    <!-- - 判断递归条件，若 `(n - 1) >= 0` 即 `n >= 1` 则跳转到 `L1` 标签处继续递归，若 `n = 0` 则执行基本情况  这一行会导致统计信息崩溃，推测是特殊符号处理顺序和嵌套 `>=` 导致的问题 -->
+    - 执行当 `n == 0` 时的基本情况，同时从栈中弹出 2 项，并跳转至下一个返回地址（从递归执行来看即跳转至 addi x6, x10, 0 处）。此处由于 `x1` 与 `x10` 不会改变，所以省略了对这两个寄存器的加载指令；
+    - 进入递归步骤，将参数置为 `n - 1`，并跳转回 `fact(n - 1)`，同时将下一行的返回地址存入 `x1`；
+    - 经过多次递归后所有中间寄存器都已压入栈内，开始计算。计算时将 `x10` 存入临时寄存器 `x6` 中，从栈中弹出下一个 `x10` 并弹出返回地址后将栈的空间恢复，即 `addi sp, sp, 16`；
+    - 计算乘法，通过 `jalr` 跳回至上一层 `fact` 函数内部的 `L1` 块，最后计算结束后跳回外部的 `caller` 处。
+
+    完整的 RISC-V 汇编如下：
 
     ```asm
     fact:
-        addi    sp, sp, -16
-        sd      x1, 8(sp)
-        sd      x10, 0(sp)
+        addi    sp, sp, -16     // adjust stack for 2 items
+        sd      x1, 8(sp)       // save the return address
+        sd      x10, 0(sp)      // save the argument n
 
+        addi    x5, x10, -1     // x5 = n - 1
+        bge     x5, 0, L1       // if (n - 1) >= 0, go to L1
+
+        addi    x10, x0, 1      // return 1
+        addi    sp, sp, 16      // pop 2 items off stack
+        jalr    x0, 0(x1)       // return to caller
+    L1:
+        addi    x10, x10, -1    // n >= 1: argument gets (n - 1)
+        jal     x1, fact        // call fact with (n - 1)
+
+        addi    x6, x10, 0      // return from jal: move result of fact (n - 1) to x6
+        ld      x10, 0(sp)      // restore argument n
+        ld      x1, 8(sp)       // restore the return address
+        addi    sp, sp, 16      // adjust stack pointer to pop 2 items
+        
+        mul     x10, x10, x6    // return n * fact(n - 1)
+        jalr    x0, 0(x1)       // return to the caller
     ```
+
+下图总结了过程调用中的保存与不被保存的对象。
+
+![](./img/ch2_6.png){.center}
+
+### Allocating Space for New Data on the Stack
+
+最后一个复杂点在于栈也用于存储过程的局部变量，但这些变量不适用于寄存器，例如局部数组或结构体。栈中包含过程所保存的寄存器和局部变量的段称作过程帧（procedure frame）或活动记录（activation record）。
+
+一些 RISC-V 编译器使用帧指针（frame pointer）`fp` 或寄存器 `x8` 来指向过程帧的第一个双字。下图展示了过程调用之前、期间和之后栈的分配情况。
+
+![](./img/ch2_7.png){.center}
+
+### Allocating Space for New Data on the Heap
+
+下图展示了 LINUX 系统中 RISC-V 分配内存的约定。栈从用户地址空间的高端开始并向下扩展，低端内存的第一部分是保留的，之后是 RISC-V 机器代码，通常称为代码段（text segment），在此之上是静态数据段（static data segment），用于存放常量和其他静态变量。
+
+![](./img/ch2_8.png){.center}
+
+数组具有固定长度，可以与静态数据段良好匹配；而链表等数据结构往往会随生命周期增长或缩短。存放这类数据结构（数组和链表）的段通常称为堆（heap），其也放在内存当中。这种分配允许栈和堆相向而长，从而达到内存的高效使用。
+
+### Conclusion
+
+最后总结 RISC-V 汇编语言的寄存器约定如下。
+
+![](./img/ch2_9.png){.center}
