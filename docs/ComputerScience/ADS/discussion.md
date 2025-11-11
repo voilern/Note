@@ -70,3 +70,21 @@ What is the overall time complexity of this algorithm for sorting n elements?  P
 How about k-way merge?
 
 **1-2** Please show an example of how a problem can be partitioned into sub-problems, yet divide and conquer method does not work.
+
+## Week 8
+
+**1-1** Dijkstra’s Algorithm for solving the shortest path problem is generally viewed as a greedy algorithm.
+
+Please try to provide a dynamic programming perspective on this algorithm.
+
+**1-2** When solving the problem All-Pairs Shortest Path by Floyd method, if we change the order of iterations to i, k, j, while other codes remain unchanged (as shown below), can we still get the correct answer?
+
+```c
+for( i = 0; i < N; i++ ) 
+    for( k = 0; k < N; k++ ) 
+        for( j = 0; j < N; j++ ) 
+            if( D[ i ][ k ] + D[ k ][ j ] < D[ i ][ j ] ) 
+                D[ i ][ j ] = D[ i ][ k ] + D[ k ][ j ]; 
+```
+
+**1-3** Can we use recursions (as we do in dfs) to solve a problem via dynamic programming?  Please explain your answer by analyzing an example.

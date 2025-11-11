@@ -419,3 +419,41 @@ BinTree Recur_Find( BinTree T, ElementType X )
 
 - D.$O(n^2)$
 
+## Homework 8
+
+**2-1** Rod-cutting Problem: Given a rod of total length $N$ inches and a table of selling prices $P_L$ for lengths $L = 1, 2, \cdots , M$.  You are asked to find the maximum revenue $R_N$ obtainable by cutting up the rod and selling the pieces.  For example, based on the following table of prices, if we are to sell an 8-inch rod, the optimal solution is to cut it into two pieces of lengths 2 and 6, which produces revenue $R_8 = P_2 +P_6 = 5+17 = 22$.  And if we are to sell a 3-inch rod, the best way is not to cut it at all.
+
+|Length L|1|2|3|4|5|6|7|8|9|10|
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+|Price PL​|1|5|8|9|10|17|17|20|23|28|
+
+Which one of the following statements is FALSE?
+
+- A.This problem can be solved by dynamic programming
+
+- B.The time complexity of this algorithm is $O(N^2)$
+
+- C.If $N\le M$, we have $R_N = \max \lbrace P_N , \max_{1\le i < N} \lbrace R_i + R_{N-i} \rbrace \rbrace$
+
+- D.If $N>M$, we have $R_N = \max_{1\le i < N} \lbrace R_i + R_{N-M} \rbrace$
+
+**2-2** In dynamic programming, we derive a recurrence relation for the solution to one subproblem in terms of solutions to other subproblems. To turn this relation into a bottom up dynamic programming algorithm, we need an order to fill in the solution cells in a table, such that all needed subproblems are solved before solving a subproblem. Among the following relations, which one is impossible to be computed?
+
+- A.$A(i, j) = min (A(i-1,j), A(i,j-1), A(i-1,j-1))$
+
+- B.$A(i, j) = F(A(min\{i, j\} - 1, min\{i, j\} - 1), A(max\{i, j\} - 1, max\{i, j\} -1))$
+
+- C.$A(i, j) = F(A(i, j -1), A(i - 1, j - 1), A(i - 1, j + 1))$
+
+- D.$A(i,j) = F(A(i-2, j-2), A(i+2,j+2))$
+
+**2-3** Given a recurrence equation $f_{i,j,k} =f_{i,j+1,k}+\min_{0 \le l \le k}\{f_{i-1,j,l}+w_{j,l}\}$. To solve this equation in an iterative way, we cannot fill up a table as follows:
+
+- A.`for k in 0 to n: for i in 0 to n: for j in n to 0`
+
+- B.`for i in 0 to n: for j in 0 to n: for k in 0 to n`
+
+- C.`for i in 0 to n: for j in n to 0: for k in n to 0`
+
+- D.`for i in 0 to n: for j in n to 0: for k in 0 to n`
+

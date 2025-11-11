@@ -4,6 +4,15 @@ comments: true
 
 # Chapter 1: Computer Abstractions and Technology
 
+## von Neumann Architecture
+
+- Computation and memory are separated 计算与存储分离
+- Memory that stores data and instructions 数据与指令保存在同一个存储器
+- Input and output mechanisms
+- Instruction set architecture
+
+![](./img/ch1_1.png){.center}
+
 ## Eight Great Ideas in Computer Architecture
 
 1. 面向摩尔定律的设计（Design for Moore's Law）：摩尔定律指出单芯片上所集成的晶体管资源每 18 至 24 个月翻一番；  

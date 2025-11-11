@@ -424,3 +424,117 @@ BinQueue BinQueue_Insert( ElementType X, BinQueue H )
 
 - D.$\Omega (N)$
 
+## Week 8
+
+**R1-1** To solve a problem by dynamic programming instead of recursions, the key approach is to store the results of computations for the subproblems so that we only have to compute each different subproblem once.  Those solutions can be stored in an array or a hash table.  
+
+- T
+
+- F
+
+**R1-2** The root of an optimal binary search tree always contains the key with the highest search probability. 
+
+- T
+
+- F
+
+**R2-1** When solving the problem All-Pairs Shortest Path by Floyd method, which one of the following iterations can give us the correct answer?
+
+- A.
+```c
+for( i = 0; i < N; i++ ) 
+    for( k = 0; k < N; k++ ) 
+        for( j = 0; j < N; j++ ) 
+            if( D[ i ][ k ] + D[ k ][ j ] < D[ i ][ j ] ) 
+                D[ i ][ j ] = D[ i ][ k ] + D[ k ][ j ]; 
+```
+
+- B.
+```c
+for( k = 0; k < N; k++ ) 
+    for( i = 0; i < N; i++ ) 
+        for( j = 0; j < N; j++ ) 
+            if( D[ k ][ i ] + D[ i ][ j ] < D[ k ][ j ] ) 
+                D[ k ][ j ] = D[ k ][ i ] + D[ i ][ j ]; 
+```
+
+- C.
+```c
+for( i = 0; i < N; i++ ) 
+    for( k = 0; k < N; k++ ) 
+        for( j = 0; j < N; j++ ) 
+            if( D[ k ][ i ] + D[ i ][ j ] < D[ k ][ j ] ) 
+                D[ k ][ j ] = D[ k ][ i ] + D[ i ][ j ]; 
+```
+
+- D.
+```c
+for( i = 0; i < N; i++ ) 
+    for( j = 0; j < N; j++ ) 
+        for( k = 0; k < N; k++ ) 
+            if( D[ i ][ k ] + D[ k ][ j ] < D[ i ][ j ] ) 
+                D[ i ][ j ] = D[ i ][ k ] + D[ k ][ j ]; 
+```
+
+**R2-2** Why doesn't Floyd algorithm work if there are negative-cost cycles?
+
+- A.Because Floyd algorithm will fall into infinite loops.
+
+- B.Because a negative-cost cycle will result in a negative D[i][i], yet Floyd algorithm can only accept positive weights.
+
+- C.Because Floyd algorithm will terminate after finite steps, yet the shortest distance is negative infinity if there is a negative-cost cycle.
+
+- D.Because Floyd didn't like negative numbers.
+
+**R2-3** Which one of the following problems can be best solved by dynamic programming?
+
+- A.Longest common subsequence problem
+
+- B.Quicksort
+
+- C.Closest pair of points problem
+
+- D.Mergesort
+
+**R2-4** To solve the optimal binary search tree problem, we have the recursive equation $c_{ij} = \min_{i \le l \le j} \{w_{ij} + c_{i,l-1}+c_{l+1,j}\}$. To solve this equation in an iterative way, we must fill up a table as follows:
+
+- A.
+```c
+    for k= 1 to n-1 do;
+      for i= 1 to n-k do;
+         set j = i+k;
+         for l= i to j do
+```
+
+- B.
+```c
+    for k= 1 to n-1 do;
+      for i= 1 to n do;
+         set j = i+k;
+         for l= i to j do
+```
+
+- C.
+```c
+    for i= 1 to n-1 do;
+      for j= i to n do;
+        for l= i to j do
+```
+
+- D.
+```c
+   for j= 1 to n-1 do;
+      for i= 1 to j do;
+        for l= i to j do
+```
+
+**R2-5** We can tell that there must be a lot of redundant calculations during the exhaustive search for the matrix multiplication problem, because the search work load is the Catalan number, yet there are only ___ different sub-problems $M_{ij}$.
+
+- A.$O(N^2)$
+
+- B.$O(N^3)$
+
+- C.$O(N)$
+
+- D.$O(N^4)$
+
