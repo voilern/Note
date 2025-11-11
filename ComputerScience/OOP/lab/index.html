@@ -541,6 +541,8 @@
       
         
       
+        
+      
     
     
     
@@ -735,6 +737,29 @@
   
   <span class="md-ellipsis">
     Lecture 7: Divide &amp; Conquer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADS/Lec08_v/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lecture 8: Dynamic Programming
     
   </span>
   
@@ -1547,6 +1572,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#assignment-4-personal-diary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assignment 4 Personal Diary
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1568,7 +1602,7 @@
 
 <h1 id="lab">Lab<a class="headerlink" href="#lab" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 623 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 2 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 889 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 3 分钟</p>
 </div>
 <h2 id="assignment-1-studenti">Assignment 1 StudentⅠ<a class="headerlink" href="#assignment-1-studenti" title="Permanent link">¶</a></h2>
 <p>Write a program that asks you for 10 records of students. Each record consists of a name (w/o space) and scores for three courses (in integer, 1 to 5). Output a list as follows and calculate the average score (in <code>float</code>) of each student and each course. Output the lowest and highest score for each course.  </p>
@@ -1638,6 +1672,36 @@
 <li>The source code</li>
 <li>A text input file with your test data</li>
 </ol>
+<h2 id="assignment-4-personal-diary">Assignment 4 Personal Diary<a class="headerlink" href="#assignment-4-personal-diary" title="Permanent link">¶</a></h2>
+<p><strong>Requirements</strong></p>
+<p>The Personal Diary is a CLI (Command Line Interface) software that consists of four programs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pdadd 
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>pdlist [ ]
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>pdshow 
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>pdremove 
+</code></pre></div>
+<ul>
+<li><code>pdadd</code> is used to add an entity to the diary for the date. If an entity of the same date is in the diary, the existing one will be replaced. <code>pdadd</code> reads lines of the diary from the stdin, line by line, until a line with a single <code>.</code> character or the <code>EOF</code> character (<code>Ctrl-D</code> in Unix and <code>Ctrl-Z</code> in Windows).</li>
+<li><code>pdlist</code> lists all entities in the diary ordered by date. If <code>start</code> and <code>end</code> dates are provided through command line parameters, it lists entities between the start and the end only. This program lists to the stdout.</li>
+<li><code>pdshow</code> prints the content of the entity specified by the date to the stdout.</li>
+<li><code>pdremove</code> removes one entity of the date. It returns 0 on success and -1 on failure.</li>
+</ul>
+<p>The software stores the diary in one data file, and reads it to the memory at the beginning of each program, and stores it back to the file at the end of the process.</p>
+<p><strong>Evaluation standard</strong></p>
+<ol>
+<li>C++ code quality (clean, compact, and reasonable)</li>
+<li>Comments quality</li>
+<li>Common classes and functions should be shared between programs</li>
+<li>These programs are physically independent, so direct interaction is not permitted</li>
+<li>These programs are able to work together by means of redirection</li>
+<li>These programs are able to be used in a shell/batch script</li>
+</ol>
+<p><strong>Files to submit</strong></p>
+<p>Please prepare a <code>.zip</code> package including the following items：</p>
+<ol>
+<li>The source code</li>
+<li>A shell/batch script with several use cases for your software (cover all programs)</li>
+</ol>
 
 
 
@@ -1660,7 +1724,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年10月29日 21:32:07 CST">2025年10月29日 21:32:07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年11月11日 18:19:07 CST">2025年11月11日 18:19:07</span>
   </span>
 
     
