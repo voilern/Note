@@ -156,6 +156,8 @@ nav:
       - ComputerScience/CO/ch1.md
       - ComputerScience/CO/ch2.md
       - ComputerScience/CO/ch3.md
+      # - ComputerScience/CO/ch4.md
+      - ComputerScience/CO/midterm.md
     - 面向对象程序设计:  
       - ComputerScience/OOP/index.md
       - ComputerScience/OOP/lec2.md
