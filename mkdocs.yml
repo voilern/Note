@@ -177,8 +177,8 @@ nav:
     - Research/BitterLesson.md
     # - Research/checkmate.md
   - Others:
-    # - 概率论与数理统计:
-    #   - Others/PMS/index.md
-    #   - Others/PMS/ch1.md
     - Others/wsl.md
-    # - Others/BitterLesson.md
+    - 概率论与数理统计:
+      - Others/PMS/index.md
+      - Others/PMS/ch1.md
+      - Others/PMS/ch2.md

@@ -437,6 +437,18 @@ Which one of the following statements is FALSE?
 
 - D.If $N>M$, we have $R_N = \max_{1\le i < N} \lbrace R_i + R_{N-M} \rbrace$
 
+??? note "Solution"
+    正确答案：D
+
+    显然可以应用动态规划求解，写出递推关系式：
+
+    $$
+    \text{if} \; N > M, R_N = \max_{1 \leq i < N} \lbrace R_i + R_{N-i} \rbrace \\[1.5em]
+    \text{if} \; N \leq M, R_N = \max \lbrace P_N , \max_{1\le i < N} \lbrace R_i + R_{N-i} \rbrace \rbrace
+    $$
+
+    可知 D 错误。错误的点在于不应将 $N - M$ 单独作为递归的一种子结构，这忽略了其它潜在的切割策略。
+
 **2-2** In dynamic programming, we derive a recurrence relation for the solution to one subproblem in terms of solutions to other subproblems. To turn this relation into a bottom up dynamic programming algorithm, we need an order to fill in the solution cells in a table, such that all needed subproblems are solved before solving a subproblem. Among the following relations, which one is impossible to be computed?
 
 - A.$A(i, j) = min (A(i-1,j), A(i,j-1), A(i-1,j-1))$
@@ -446,6 +458,11 @@ Which one of the following statements is FALSE?
 - C.$A(i, j) = F(A(i, j -1), A(i - 1, j - 1), A(i - 1, j + 1))$
 
 - D.$A(i,j) = F(A(i-2, j-2), A(i+2,j+2))$
+
+??? note "Solution"
+    正确答案：D
+
+    前三者都有可行的计算顺序，例如 A 可以用 外层 i 内层 j 的双层循环完成；B 只依赖于主对角线上的元素 $A(k, k)$，可以先算出所有的主对角线元素，之后所有 $A(i, j)$ 的值都可计算；C 类似于 A；但 D 选项中 $A(i, j)$ 与 $A(i+2, j+2)$ 相互依赖，不可计算。
 
 **2-3** Given a recurrence equation $f_{i,j,k} =f_{i,j+1,k}+\min_{0 \le l \le k}\{f_{i-1,j,l}+w_{j,l}\}$. To solve this equation in an iterative way, we cannot fill up a table as follows:
 
@@ -457,3 +474,7 @@ Which one of the following statements is FALSE?
 
 - D.`for i in 0 to n: for j in n to 0: for k in 0 to n`
 
+??? note "Solution"
+    正确答案：B
+
+    根据递推式，$f_{i,j,k}$ 依赖于 $f_{i,j+1,k}$ 与 $f_{i-1,j,l}$，为保证 `i - 1` 与 `j + 1` 在 `i` 与 `j` 之前计算完毕，`i` 循环的顺序应为 `0 - n`，`j` 应为 `n - 0`，`k` 的顺序在这里不会影响结果。因此 B 选项是错误的。 
