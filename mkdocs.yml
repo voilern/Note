@@ -90,7 +90,7 @@ extra:
     - icon: fontawesome/brands/bilibili
       link: https://space.bilibili.com/403057961
     - icon: fontawesome/solid/envelope
-      link: mailto:<hejiayi@zju.edu.cn>
+      link: mailto:<voilern486@gmail.com>
 
 extra_css:
   - stylesheets/css/card.css
@@ -108,7 +108,6 @@ extra_javascript:
   - javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-
 
 plugins:
   - search
