@@ -55,5 +55,14 @@ bool Backtracking (int i) {
 
 ## Tic-tac-toe
 
+### Minimax Strategy
+
+在井字棋中我们可以采用极小化极大策略（Minimax strategy）。定义一个评估函数（evaluation function）为 $f(P) = W_{\text{Computer}} - W_{\text{Human}}$，其中 $W$ 表示在当前局面下可获胜的情况数（在井字棋中即为可取胜的线路数）。此时人类倾向于最小化 $f(P)$，而计算机倾向于最大化 $f(P)$。
+
+### $\alpha - \beta$ 剪枝
+
+$\alpha$ 剪枝
+
+$\beta$ 剪枝
 
 ## 五子棋

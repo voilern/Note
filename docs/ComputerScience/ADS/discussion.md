@@ -88,3 +88,18 @@ for( i = 0; i < N; i++ )
 ```
 
 **1-3** Can we use recursions (as we do in dfs) to solve a problem via dynamic programming?  Please explain your answer by analyzing an example.
+
+## Week 9
+
+**1-1** Let us consider the following problem: given the set of activities S, we must schedule them all using the minimum number of rooms.
+
+**Greedy1:** Use the optimal algorithm for the Activity Selection Problem to find the max number of activities that can be scheduled in one room. Delete and repeat on the rest, until no activity is left.
+
+**Greedy2:**
+
+- Sort activities by start time. Open room 1 for a1​.
+- for i=2 to n if ai​ can fit in any open room, schedule it in that room; otherwise open a new room for ai​.
+
+Discuss on each of the above algorithms -- will they end up at the optimal solution?
+
+**1-2** Is Huffman algorithm the only way to obtain the optimal codes?  Prove it if your answer is YES, or show a counter-example if NO.

@@ -538,3 +538,76 @@ for( i = 0; i < N; i++ )
 
 - D.$O(N^4)$
 
+## Week 9
+
+**R1-1** A binary tree that is not full cannot correspond to an optimal prefix code.
+
+- T
+
+- F
+
+**R1-2** In a greedy algorithm, a decision made in one stage is not changed in a later stage.
+
+- T
+
+- F
+
+**R1-3** Let $c_{1,j}$ be the optimal solution for $a_1$ to $a_j$, and $a_{k(j)}$ is the nearest compatible activity to $a_j$  that is finished before $a_j$.  If each activity has a weight $w$, then
+
+![](img/quiz9_1-3.png){.center}
+
+- T
+
+- F
+
+**R1-4** To prove the correctness of a greedy algorithm, we must prove that an optimal solution to the original problem always makes the greedy choice, so that the greedy choice is always safe. 
+
+- T
+
+- F
+
+**R1-5** Greedy algorithm works only if the local optimum is equal to the global optimum. 
+
+- T
+
+- F
+
+**R2-1** Given four characters (a, b, c, d) with distinct frequencies in a text.  Suppose that a and b are the two characters having the lowest frequencies.  Which of the following sets of code is a possible Huffman code for this text?
+
+- A.a: 000,  b:001,  c:10,  d:1
+
+- B.a: 010,  b:001,  c:01,  d:1
+
+- C.a: 000,  b:001,  c:01,  d:11
+
+- D.a: 000,  b:001,  c:01,  d:1
+
+**R2-2** Given a set of activities $S = \{ a_1, a_2, \cdots , a_n \}$.  Each $a_i$ takes place during a time interval $[s_i, f_i)$.If an instance $S$ given as the following, the maximum-size  of mutually compatible activities is __.
+
+![](img/quiz9_2-2.png){.center}
+
+- A.7
+
+- B.6
+
+- C.5
+
+- D.4
+
+**R2-3** Given 4 cases of frequences of four characters. In which case(s) that the total bits taken by Huffman codes are the same as that of the ordinary equal length codes?
+
+```
+(1) 4 2 11 6
+(2) 6 5 7 12
+(3) 3 2 3 4
+(4) 8 3 10 7
+```
+
+- A.(3) and (4)
+
+- B.none
+
+- C.(3) only
+
+- D.(1) and (3)
+

@@ -478,3 +478,40 @@ Which one of the following statements is FALSE?
     正确答案：B
 
     根据递推式，$f_{i,j,k}$ 依赖于 $f_{i,j+1,k}$ 与 $f_{i-1,j,l}$，为保证 `i - 1` 与 `j + 1` 在 `i` 与 `j` 之前计算完毕，`i` 循环的顺序应为 `0 - n`，`j` 应为 `n - 0`，`k` 的顺序在这里不会影响结果。因此 B 选项是错误的。 
+
+## Homework 9
+
+**1-1** Let S be the set of activities in Activity Selection Problem.  Then the earliest finish activity $a_m$ must be included in all the maximum-size subset of mutually compatible activities of S.  
+
+- T
+
+- F
+
+**1-2** Let $C$ be an alphabet in which each character $c$ in $C$ has frequency $c.freq$.  If the size of $C$ is $n$,  the length of the optimal prefix code for any character $c$ is not greater than $n-1$.   
+
+- T
+
+- F
+
+**2-1** Consider the problem of making change for $n$ cents using the fewest number of coins. Assume that each coin's value is an integer.The coins of the lowest denomination（面额） is the cent.
+
+(I) Suppose that the available coins are quarters (25 cents), dimes (10 cents), nickels (5 cents), and pennies (1 cent). The greedy algorithm always yields an optimal solution.
+
+(II) Suppose that the available coins are in the denominations that are powers of c, that is, the denominations are $c^0$, $c^1$, ..., $c^k$ for some integers $c>1$ and $k>=1$. The greedy algorithm always yields an optimal solution.
+
+(III) Given any set of $k$ different coin denominations which includes a penny (1 cent) so that there is a solution for every value of $n$, greedy algorithm always yields an optimal solution.
+
+Which of the following is correct?
+
+- A.Statement (I) is false.
+
+- B.Statement (II) is false.
+
+- C.Statement (III) is false.
+
+- D.All of the three statements are correct.
+
+??? note "Solution"
+    正确答案：C
+
+    前两种情况下，较大面额的硬币可以被较小面额的硬币精确表示，贪心总是局部最优的，因此是正确的；第三种情况下则不一定成立，例如我们有 1, 20, 50 三种面额的硬币，需要表示 60，此时最优策略应该是 20 × 3，而不是贪心所得的 50 + 10 × 1。对于第三种情况我们应使用动规求解。
