@@ -15,6 +15,9 @@
 
 - D. 9 is the parent of 7
 
+??? note "Solution"
+    正确答案：B
+
 **2-2** For the result of accessing the keys 3, 9, 1, 5 in order in the splay tree in the following figure, which one of the following statements is FALSE?
 
 ![](img/hw1_2-2.png){.center}
@@ -27,6 +30,9 @@
 
 - D. 3 is the parent of 4
 
+??? note "Solution"
+    正确答案：D
+
 **2-3** If the depth of an AVL tree is 6 (the depth of an empty tree is defined to be -1), then the minimum possible number of nodes in this tree is:
 
 - A. 13
@@ -36,6 +42,23 @@
 - C. 20
 
 - D. 33
+
+??? note "Solution"
+    正确答案：D
+    
+    我们有
+
+    $$
+    n_h = \left\{
+        \begin{array}{l}
+            1                       & (h = 0) \\
+            2                       & (h = 1) \\
+            n_{h-1} + n_{h-2} + 1   & (h > 1)
+        \end{array}
+    \right.
+    $$
+
+    注意是从 $h = 0$ 开始的，代入计算即可，$n_6 = 8n_1 + 5n_0 + 12 = 33$。
 
 **2-4** When doing amortized analysis, which one of the following statements is FALSE?
 
@@ -47,6 +70,11 @@
 
 - D. The difference between aggregate analysis and accounting method is that the later one assumes that the amortized costs of the operations may differ from each other
 
+??? note "Solution"
+    正确答案：B
+
+    正确表述为 minimum。
+
 **2-5** Consider the following buffer management problem. Initially the buffer size (the number of blocks) is one. Each block can accommodate exactly one item. As soon as a new item arrives, check if there is an available block. If yes, put the item into the block, induced a cost of one. Otherwise, the buffer size is doubled, and then the item is able to put into. Moreover, the old items have to  be moved into the new buffer so it costs $k+1$ to make this insertion, where $k$ is the number of old items. Clearly, if there are $N$ items, the worst-case cost for one insertion can be $\Omega (N)$.  To show that the average cost is $O(1)$, let us turn to the amortized analysis. To simplify the problem, assume that the buffer is full after all the $N$ items are placed. Which of the following potential functions works?
 
 - A. The number of items currently in the buffer
@@ -57,7 +85,15 @@
 
 - D. The opposite number of available blocks in the buffer
 
+??? note "Solution"
+    正确答案：D
 
+    证明过程引用本题解析：
+
+    设 $size \; i$ 为第 $i$ 次插入前 buffer 的大小。
+
+    直观理解的话，势能函数要做到在开销较大的操作时使总势能降低。检查几个选项，对于缓冲区已满时的插入操作，我们记 $ \hat{c_i} = c_i + \phi_i - \phi_{i-1}$，缓冲区可用的 block 数为 $k$，则 D 选项有 $\phi_i - \phi_{i-1} = -k - 0 = -k$，可以使得总势能降低，而其它选项都不可以，因此选 D。
+    
 ## Homework 2
 
 **1-1** A 2-3 tree with 3 nonleaf nodes must have 18 keys at most.
@@ -65,6 +101,9 @@
 - T
 
 - F
+
+??? note "Solution"
+    正确答案：T
 
 **2-1** In the red-black tree that results after successively inserting the keys 41; 38; 31; 12; 19; 8 into an initially empty red-black tree, which one of the following statements is FALSE?
 
@@ -75,6 +114,9 @@
 - C. 12 and 31 are siblings, and they are both black
 
 - D. 8 is red
+
+??? note "Solution"
+    正确答案：B
 
 **2-2** After deleting 15 from the red-black tree given in the figure, which one of the following statements must be FALSE?
 
@@ -88,6 +130,11 @@
 
 - D. 17 is the parent of 11, and 17 is black
 
+??? note "Solution"
+    正确答案：C
+
+    如果 11 是 17 的父节点且为红色，则其左右子树黑高不相等。
+
 **2-3** Insert 3, 1, 4, 5, 9, 2, 6, 8, 7, 0 into an initially empty 2-3 tree (with splitting).  Which one of the following statements is FALSE?
 
 - A. 7 and 8 are in the same node
@@ -97,6 +144,9 @@
 - C. the first key stored in the root is 6
 
 - D. there are 5 leaf nodes
+
+??? note "Solution"
+    正确答案：A
 
 **2-4** After deleting 9 from the 2-3 tree given in the figure, which one of the following statements is FALSE?
 
@@ -110,6 +160,9 @@
 
 - D. 6 and 5 are in the same node
 
+??? note "Solution"
+    正确答案：D
+
 **2-5** Which of the following statements concerning a B+ tree of order $M$ is TRUE?
 
 - A. the root always has between 2 and $M$ children
@@ -120,6 +173,9 @@
 
 - D. all nonleaf nodes have between $\lceil M/2\rceil$ and $M$ children
 
+??? note "Solution"
+    正确答案：C
+
 ## Homework 3
 
 **1-1** In distributed indexing, document-partitioned strategy is to store on each node all the documents that contain the terms in a certain range.
@@ -128,11 +184,21 @@
 
 - F
 
+??? note "Solution"
+    正确答案：F
+
+    描述的是 term-partitioned strategy，document-partitioned strategy 指将文档集合切分，每个节点包含一部分文档。前者指的是将词典切分，每个节点包含一部分词条。
+
 **1-2** When evaluating the performance of data retrieval, it is important to measure the relevancy of the answer set.
 
 - T
 
 - F
+
+??? note "Solution"
+    正确答案：F
+
+    answer set relevancy 是 information retrieval 的指标，而非 data retrieval。后者主要考虑响应时间、索引占用空间等指标。
 
 **1-3** Precision is more important than recall when evaluating the explosive detection in airport security.   
 
@@ -140,11 +206,17 @@
 
 - F
 
+??? note "Solution"
+    正确答案：F
+
 **1-4** While accessing a term by hashing in an inverted file index, range searches are expensive.  
 
 - T
 
 - F
+
+??? note "Solution"
+    正确答案：T
 
 **2-1** When measuring the relevancy of the answer set, if the precision is high but the recall is low, it means that:
 
@@ -156,6 +228,9 @@
 
 - D.most of the retrieved documents are relevant, but the benchmark set is not large enough
 
+??? note "Solution"
+    正确答案：B
+
 **2-2** Which of the following is NOT concerned for measuring a search engine?
 
 - A.How fast does it index
@@ -165,6 +240,9 @@
 - C.How friendly is the interface
 
 - D.How relevant is the answer set
+
+??? note "Solution"
+    正确答案：C
 
 **2-3** There are 28000 documents in the database. The statistic data for one query are shown in the following table. The recall is: __
 
@@ -181,6 +259,9 @@
 
 - D.50%
 
+??? note "Solution"
+    正确答案：C
+
 ## Homework 4
 
 **1-1** The result of inserting keys 1 to $2^k -1$ for any $k>4$ in order into an initially empty skew heap is always a full binary tree.
@@ -189,11 +270,19 @@
 
 - F
 
+??? note "Solution"
+    正确答案：T
+
 **1-2** The right path of a skew heap can be arbitrarily long. 
 
 - T
 
 - F
+
+??? note "Solution"
+    正确答案：T
+
+    不同于左偏堆维护一个 `Npl`（null path length）并要求 `Npl(Left) >= Npl(Right)`，从而使得右路径长度最多为 $O(logN)$，斜堆没有任何严格结构限制，其 $O(logN)$ 是摊还的，可能会出现开销较大的单次操作，最坏情况下退化为链表。
 
 **2-1** Merge the two leftist heaps in the following figure.  Which one of the following statements is FALSE?
 
@@ -207,6 +296,11 @@
 
 - D.the null path length of 4 is less than that of 2
 
+??? note "Solution"
+    正确答案：D
+
+    合并后的左偏堆中 4 的 npl 为 2，2 的 npl 也为 2，因此 D 是错误的。
+
 **2-2** We can perform BuildHeap for leftist heaps by considering each element as a one-node leftist heap, placing all these heaps on a queue, and performing the following step: Until only one heap is on the queue, dequeue two heaps, merge them, and enqueue the result.  Which one of the following statements is FALSE?
 
 - A.in the $k$-th run, $\lceil N/2^k \rceil$ leftist heaps are formed, each contains $2^k$ nodes
@@ -217,6 +311,9 @@
 
 - D.the worst case time complexity of this algorithm is $\Theta (NlogN)$
 
+??? note "Solution"
+    正确答案：D
+
 **2-3** Insert keys 1 to 15 in order into an initially empty skew heap.  Which one of the following statements is FALSE?
 
 - A.the resulting tree is a complete binary tree
@@ -226,6 +323,9 @@
 - C.6 is the left child of 2
 
 - D.11 is the right child of 7
+
+??? note "Solution"
+    正确答案：B
 
 **2-4** Merge the two skew heaps in the following figure.  Which one of the following statements is FALSE?
 
@@ -238,6 +338,9 @@
 - C.1 is the root
 
 - D.9 is the right child of 3
+
+??? note "Solution"
+    正确答案：A
 
 **5-1** **Merge two leftist heaps**
 
@@ -261,10 +364,10 @@ PriorityQueue Merge( PriorityQueue H1, PriorityQueue H2 )
   return H1;
 }
 ```
-<!-- ??? note "solution"
+??? note "solution"
     1. H1->Element > H2->Element
     2. H1->Left = H2
-    3. H1->Npl = H1->Right->npl + 1 -->
+    3. H1->Npl = H1->Right->Npl + 1
 
 ## Homework 5
 
@@ -278,6 +381,11 @@ PriorityQueue Merge( PriorityQueue H1, PriorityQueue H2 )
 
 - D.$B_2$ $B_4$
 
+??? note "Solution"
+    正确答案：B
+
+    有 $42 = \text{101010}_2$，即 $B_5 B_3 B_1$。
+
 **2-2** For a binomial queue, __ takes a constant time on average.
 
 - A.merging
@@ -287,6 +395,17 @@ PriorityQueue Merge( PriorityQueue H1, PriorityQueue H2 )
 - C.delete-min
 
 - D.insertion
+
+??? note "Solution"
+    正确答案：D
+
+    插入等价于二进制 + 1，使用聚合法做摊还分析，假设连续插入 N 次，则总的进位次数为
+
+    $$ \text{Total Cost} = N(1 + \frac{1}{2} + \frac{1}{4} + \dots) = 2N $$
+
+    平均每次插入的代价为 $\frac{2N}{N} = 2 = O(1)$，最坏情况下是 $O(logN)$。
+
+    其它选项中，merge 的复杂度为 $O(logN)$，find-max 的复杂度为 $O(N)$，delete-min 的复杂度为 $O(logN)$。
 
 **2-3** Merge the two binomial queues in the following figure.  Which one of the following statements must be FALSE?
 
@@ -300,6 +419,9 @@ PriorityQueue Merge( PriorityQueue H1, PriorityQueue H2 )
 
 - D.if 4 is a child of 2, then 23 must be another child of 2
 
+??? note "Solution"
+    正确答案：D
+
 **2-4** Delete the minimum number from the given binomial queues in the following figure.  Which one of the following statements must be FALSE?
 
 ![](img/hw5_2-4.png){.center}
@@ -311,6 +433,11 @@ PriorityQueue Merge( PriorityQueue H1, PriorityQueue H2 )
 - C.29 can never be the root of any resulting binomial tree
 
 - D.if 29 is a child of 4, then 15 must be the root of $B_1$
+
+??? note "Solution"
+    正确答案：C
+
+    显然 29 可以作为 $B_1$ 的根。
 
 **5-1** **BinQueue_Find**
 
@@ -346,6 +473,10 @@ BinTree Recur_Find( BinTree T, ElementType X )
 }
 ```
 
+??? note "Solution"
+    1. >= T->Element
+    2. T->NextSibling != NULL
+
 ## Homework 6
 
 **2-1** In the Tic-tac-toe game, a "goodness" function of a position is defined as $f(P) = W_{computer} - W_{human}$where $W$ is the number of potential wins at position $P$.In the following figure, O represents the computer and X the human. What is the goodness of the position of the figure?
@@ -377,6 +508,9 @@ BinTree Recur_Find( BinTree T, ElementType X )
 
 - D.d
 
+??? note "Solution"
+    正确答案：C
+
 ## Homework 7
 
 **2-1** When solving a problem with input size $N$ by divide and conquer, if at each stage the problem is divided into 8 sub-problems of equal size $N/3$, and the conquer step takes $O(N^2 logN)$ to form the solution from the sub-solutions, then the overall time complexity is __.
@@ -389,6 +523,11 @@ BinTree Recur_Find( BinTree T, ElementType X )
 
 - D.$O(N^{log8/log3})$
 
+??? note "Solution"
+    正确答案：A
+
+    $T(N) = 8T(N/3) + O(N^2 \log{N})$，则 $a = 8, b^k = 3^2 = 9$，故 $T(N) = O(N^k \log^p{N}) = O(N^2 logN)$。
+
 **2-2** To solve a problem with input size $N$ by divide and conquer algorithm, among the following methods, __ is the worst.
 
 - A.divide into 2 sub-problems of equal complexity $N/3$ and conquer in $O(N)$
@@ -398,6 +537,9 @@ BinTree Recur_Find( BinTree T, ElementType X )
 - C.divide into 3 sub-problems of equal complexity $N/2$ and conquer in $O(N)$
 
 - D.divide into 3 sub-problems of equal complexity $N/3$ and conquer in $O(NlogN)$
+
+??? note "Solution"
+    正确答案：C
 
 **2-3** 3-way-mergesort : Suppose instead of dividing in two halves at each step of the mergesort, we divide into three one thirds, sort each part, and finally combine all of them using a three-way-merge.  What is the overall time complexity of this algorithm ?
 
@@ -409,6 +551,9 @@ BinTree Recur_Find( BinTree T, ElementType X )
 
 - D.$O(n)$
 
+??? note "Solution"
+    正确答案：C
+
 **2-4** Which one of the following is the lowest upper bound of $T(n)$ for the following recursion  $T(n) = 2T(\sqrt{n}) + \log n$?
 
 - A.$O(\log n\log \log n)$
@@ -418,6 +563,9 @@ BinTree Recur_Find( BinTree T, ElementType X )
 - C.$O(n\log n)$
 
 - D.$O(n^2)$
+
+??? note "Solution"
+    正确答案：A
 
 ## Homework 8
 
@@ -487,11 +635,17 @@ Which one of the following statements is FALSE?
 
 - F
 
+??? note "Solution"
+    正确答案：F
+
 **1-2** Let $C$ be an alphabet in which each character $c$ in $C$ has frequency $c.freq$.  If the size of $C$ is $n$,  the length of the optimal prefix code for any character $c$ is not greater than $n-1$.   
 
 - T
 
 - F
+
+??? note "Solution"
+    正确答案：T
 
 **2-1** Consider the problem of making change for $n$ cents using the fewest number of coins. Assume that each coin's value is an integer.The coins of the lowest denomination（面额） is the cent.
 
