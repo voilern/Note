@@ -103,3 +103,9 @@ for( i = 0; i < N; i++ )
 Discuss on each of the above algorithms -- will they end up at the optimal solution?
 
 **1-2** Is Huffman algorithm the only way to obtain the optimal codes?  Prove it if your answer is YES, or show a counter-example if NO.
+
+## Week 10
+
+**1-1** The longest Hamiltonian cycle problem is to find a simple cycle of maximum length in a graph.  To prove that it is NPC, we must first prove that it is in NP -- that is, to prove that an answer can be verified to be correct in polynomial time.
+
+To verify that a cycle is Hamiltonian is easy. But how would you know if a cycle really is the longest?

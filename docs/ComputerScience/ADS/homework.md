@@ -474,7 +474,7 @@ BinTree Recur_Find( BinTree T, ElementType X )
 ```
 
 ??? note "Solution"
-    1. >= T->Element
+    1. \>= T->Element
     2. T->NextSibling != NULL
 
 ## Homework 6
@@ -669,3 +669,56 @@ Which of the following is correct?
     正确答案：C
 
     前两种情况下，较大面额的硬币可以被较小面额的硬币精确表示，贪心总是局部最优的，因此是正确的；第三种情况下则不一定成立，例如我们有 1, 20, 50 三种面额的硬币，需要表示 60，此时最优策略应该是 20 × 3，而不是贪心所得的 50 + 10 × 1。对于第三种情况我们应使用动规求解。
+
+## Homework 10
+
+**1-1** If $L_1 \leq_p L_2$ and $L_2 \in NP$, then $L_1 \in NP$.  
+
+- T
+
+- F
+
+**1-2** All NP-complete problems are NP problems. 
+
+- T
+
+- F
+
+**1-3** All the languages can be decided by a non-deterministic machine. 
+
+- T
+
+- F
+
+**1-4** All NP problems can be solved in polynomial time in a non-deterministic machine. 
+
+- T
+
+- F
+
+**1-5** If a problem can be solved by dynamic programming, it must be solved in polynomial time. 
+
+- T
+
+- F
+
+**2-1** Among the following problems, __ is NOT an NP-complete problem.
+
+- A.Vertex cover problem
+
+- B.Hamiltonian cycle problem
+
+- C.Halting problem
+
+- D.Satisfiability problem
+
+**2-2** Suppose Q is a problem in NP, but not necessarily NP-complete.  Which of the following is FALSE?
+
+- A.A polynomial-time algorithm for SAT would sufficiently imply a polynomial-time algorithm for Q.
+
+- B.A polynomial-time algorithm for Q would sufficiently imply a polynomial-time algorithm for SAT.
+
+- C.If Q $\notin P$, then $P \neq NP$.
+
+- D.If Q is NP-hard, then Q is NP-complete.
+

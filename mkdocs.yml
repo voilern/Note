@@ -134,7 +134,6 @@ nav:
       - ComputerScience/ADS/Lec03.md
       - ComputerScience/ADS/Lec04.md
       - ComputerScience/ADS/Lec05.md
-      - ComputerScience/ADS/ds_sum.md
       # - ComputerScience/ADS/Lec06.md
       - ComputerScience/ADS/lec06_v.md
       - ComputerScience/ADS/lec07_v.md
@@ -151,6 +150,7 @@ nav:
       - ComputerScience/ADS/homework.md
       - ComputerScience/ADS/discussion.md
       - ComputerScience/ADS/quiz.md
+      - ComputerScience/ADS/midterm.md
     - 计算机组成:
       - ComputerScience/CO/index.md
       - ComputerScience/CO/ch1.md

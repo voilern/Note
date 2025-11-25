@@ -611,3 +611,77 @@ for( i = 0; i < N; i++ )
 
 - D.(1) and (3)
 
+## Week 10
+
+**R1-1** The decision problem HALTING returns TRUE, if, for a given input $I$ and a given (deterministic) algorithm $A$, $A$ terminates, otherwise it loops forever. The HALTING problem is NP-complete.  
+
+- T
+
+- F
+
+**R2-1** Given that problem A is NP-complete.  If problem B is in NP and can be polynomially reduced to problem A, then problem B is NP-complete. 
+
+- T
+
+- F
+
+**R1-3** To prove problem B is NP-complete,  we can use a NP-complete problem A and use a polynomial-time reduction algorithm to transform an instance of problem B to an instance of problem A.  
+
+- T
+
+- F
+
+**R1-4** A language L belongs to NP iff there exist a two-input polynomial-time algorithm A that verifies language L in polynomial time. 
+
+- T
+
+- F
+
+**R1-5** If P = NP then the Shortest-Path (finding the shortest path between a pair of given vertices in a given graph) problem is NP-complete.
+
+- T
+
+- F
+
+**R1-6** All decidable problems are NP problems. 
+
+- T
+
+- F
+
+**R1-7** NP-hard problems and NP-complete problems are the subsets of NP problems.
+
+- T
+
+- F
+
+**R2-1** Which one of the following statements is TRUE about the NP class?
+
+- A.$P\subseteq NP$ and $NP=NP$-Complete $\cap\ NP$-hard
+
+- B.$P\subseteq NP\subseteq NP$-Complete $\subseteq NP$-hard
+
+- C.$P\subseteq NP$ and $NP$-Complete $=NP\cap\ NP$-hard
+
+- D.$P\subseteq NP$-Complete $\subseteq NP$-hard $\subseteq NP$
+
+**R2-2** Let X be a problem that belongs to the class NP. Then which one of the following is TRUE?
+
+- A.There is no polynomial time algorithm for X.
+
+- B.If X can be solved deterministically in polynomial time, then P = NP.
+
+- C.X may be undecidable.
+
+- D.If X is NP-hard, then it is NP-complete.
+
+**R2-3** About Vertex Cover problem, which of the following statements is FALSE?
+
+- A.The time complexity of its verification algorithm is $O(N^3)$, where $N$ refers to the number of nodes.
+
+- B.It is an NP problem.
+
+- C.It is an NP-complete problem.
+
+- D.It is polynomial-time reducible to Clique problem, but not vice versa.
+
