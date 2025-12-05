@@ -685,3 +685,58 @@ for( i = 0; i < N; i++ )
 
 - D.It is polynomial-time reducible to Clique problem, but not vice versa.
 
+## Week 11
+
+**R1-1** An algorithm is called an $\alpha (n)$-approximation algorithm if it achieves an approximation ratio of $\alpha (n)$,
+
+- T
+
+- F
+
+**R1-2** In the bin packing problem, we are asked to pack a list of items $L$ to the minimum number of bins of capacity 1.  For the instance $L$, let $FF(L)$ denote the number of bins used by the algorithm First Fit.  The instance $L'$ is derived from $L$ by deleting one item from $L$.  Then $FF(L')$ is at most of $FF(L)$. 
+ 
+
+- T
+
+- F
+
+**R1-3** An $(1+ \epsilon)$-approximation scheme of time complexity $(n+1/\epsilon)^3$ is a PTAS but not an FPTAS.
+
+- T
+
+- F
+
+**R1-4** For the 0-1 version of the Knapsack problem, if we are greedy on taking the maximum profit or profit density, then the resulting profit must be bounded below by the optimal solution minus the maximum profit.
+
+- T
+
+- F
+
+**R1-5** 
+
+![](./img/quiz11_1-5.png){.center}
+
+Based on the above greedy approach, we can find a 2-approximation in polynomial time if $r$ is an integer.
+
+- T
+
+- F
+
+**R1-6** An approximation scheme that runs in $O(n^2/\epsilon)$ for any fixed $\epsilon >0$ is a fully polynomial-time approximation scheme. 
+
+- T
+
+- F
+
+**R1-7** Approximation algorithm is for finding the near-optimal solutions in polynomial time.
+
+- T
+
+- F
+
+**R1-8** An approximation scheme that runs in $O(n^2 3^\epsilon)$ for any fixed $\epsilon >0$ is a polynomial-time approximation scheme. 
+
+- T
+
+- F
+

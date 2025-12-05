@@ -109,3 +109,6 @@ Discuss on each of the above algorithms -- will they end up at the optimal solut
 **1-1** The longest Hamiltonian cycle problem is to find a simple cycle of maximum length in a graph.  To prove that it is NPC, we must first prove that it is in NP -- that is, to prove that an answer can be verified to be correct in polynomial time.
 
 To verify that a cycle is Hamiltonian is easy. But how would you know if a cycle really is the longest?
+
+## Week 11
+
