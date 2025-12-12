@@ -112,3 +112,33 @@ To verify that a cycle is Hamiltonian is easy. But how would you know if a cycle
 
 ## Week 11
 
+**1-1** 
+
+![](./img/disc11_1-1.png){.center}
+
+**1-2** The FFD algorithm for bin packing achieves the following bounds:
+FFD(L)≤(11/9)OPT(L)+1, for all L.
+
+- (1) Please show that FFD(L)≤(3/2)OPT(L), for all L, with the above inequality.
+
+- (2) Prove that the factor 3/2 is the best possible unless P=NP (note that deciding if two bins are sufficient to accommodate a set of items is NP-complete).
+
+**1-3** let's take another look at the fractional knapsack problem.  It can be shown that there is an optimal packing with at most one split item. Based on this observation, the 2-approximation algorithm for the 0-1 knapsack problem follows easily. Obviously, in the fractional case, if the split item has a relatively small value, it would result a good approximation for the integral case by simply discarding the split one (the items remain in the knapsack are all integral). 
+
+Along this line, try to design a better approximation algorithm by bounding value of the split item (to be discarded later).
+
+## Week 12
+
+**1-1** What are the differences between Greedy algorithm and Local Search?
+
+**1-2** A bipartite graph G is one whose vertex set can be partitioned into two sets A and B, such that each edge in the graph goes between a vertex in A and a vertex in B. Matching M in G is a set of edges that have no end points in common. Maximum Bipartite Matching Problem finds a matching with the greatest number of edges (over all matchings).
+
+Consider the following **Gradient Ascent Algorithm**:
+
+_As long as there is an edge whose endpoints are unmatched, add it to the current matching. When there is no longer such an edge, terminate with a locally optimal._
+
+- (a) Give an example of a bipartite graph G for which this gradient ascent algorithm does **not** return the maximum matching.
+
+- (b) Let M and M′ be matchings in a bipartite graph G. Suppose that ∣M′∣>2∣M∣. Show that there is an edge e′ in M′ such that (M∪e′) is a matching in G.
+
+- \(c) Use (b) to conclude that any locally optimal matching returned by the gradient ascent algorithm in a bipartite graph G is at least half as large as a maximum matching in G.

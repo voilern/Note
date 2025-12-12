@@ -4,6 +4,9 @@ comments: true
 
 # 2025 - 2026 秋冬 期中回忆卷
 
+!!! info "说明"
+	此处的试卷并不完整，马德老师在期中考后简单讲解了这张试卷，可观看 [智云课堂 - 计算机组成 2025-12-09 第 6-8 节](https://classroom.zju.edu.cn/livingroom?course_id=73739&sub_id=1807788&tenant_code=112){target="_blank"} 作为参考，其中含有完整试卷与解析。
+
 往年卷：
 
 - [【学习天地】2022 - 23 春夏 计算机组成 马德班 期中考回忆卷]( https://www.cc98.org/topic/5600097){target="_blank"}

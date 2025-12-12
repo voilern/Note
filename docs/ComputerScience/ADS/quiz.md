@@ -740,3 +740,53 @@ Based on the above greedy approach, we can find a 2-approximation in polynomial 
 
 - F
 
+## Week 12
+
+**R1-1** In Metropolis Algorithm, the probability of jumping up depends on T, the temperature. When the temperature is high, it'll be close to the original gradiant descent method.
+
+- T
+
+- F
+
+**R1-2** Random restarts can help a local search algorithm to better find global maxima that are surrounded by local maxima.
+
+- T
+
+- F
+
+**R1-3** Greedy method is a special case of local search. 
+
+- T
+
+- F
+
+**R1-4** In local search, if the optimization function has a constant value in a neighborhood, there will be a problem.
+
+- T
+
+- F
+
+**R1-5** Since finding a locally optimal solution is presumably easier than finding an optimal solution, we can claim that for any local search algorithm, one step of searching in neighborhoods can always be done in polynomial time.   
+
+- T
+
+- F
+
+**R2-1** How many of the following statements is/are TRUE?
+
+The 0-1 knapsack problem cannot be solved by any local search algorithm.
+
+The metropolis algorithm always improves the gradient descent algorithm.
+
+In some cases, the state-flipping algorithm cannot terminate.
+
+Unless $P=NP$, there is no $\rho$-approximation for the maximum cut problem for any $\rho<2$.
+
+- A.3
+
+- B.0
+
+- C.2
+
+- D.1
+
