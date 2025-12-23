@@ -128,7 +128,7 @@ Please prepare a `.zip` package including the following items：
 1. The source code
 2. A shell/batch script with several use cases for your software (cover all programs)
 
-## Assignment 005 Fraction
+## Assignment 5 Fraction
 
 **Requirements**
 

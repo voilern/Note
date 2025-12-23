@@ -790,3 +790,80 @@ Unless $P=NP$, there is no $\rho$-approximation for the maximum cut problem for 
 
 - D.1
 
+## Week 13
+
+**R1-1** The worst-case running time is equal  to the expected running time within constant factors for any randomized algorithm.  
+
+- T
+
+- F
+
+**R1-2** Consider the online hiring problem, in which we have total $k$ candidates. First of all, we interview $n$ candidates but reject them all. Then we hire the first candidate who is better than all of the previous candidates you have interviewed.  It is true that the probability of the $m$th candidate is the best is $\frac{n}{k(m-1)}$, where $m > n$.  
+
+- T
+
+- F
+
+**R1-3** A randomized Quicksort algorithm has an $O(N \log N)$ expected running time, only if all the input permutations are equally likely.  
+
+- T
+
+- F
+
+**R1-4** Randomized algorithms are for solving the problems with randomly generated inputs. 
+
+- T
+
+- F
+
+**R2-1** Given a 3-SAT formula with $k$ clauses, in which each clause has three variables, the MAX-3SAT problem is to find a truth assignment that satisfies as many clauses as possible.  A simple randomized algorithm is to flip a coin, and to set each variable true with probability $1/2$, independently for each variable.  Which of the following statements is FALSE?
+
+- A.The probability that a random assignment satisfies at least $7k/8$ clauses is at most $1/(8k)$.
+
+- B.For every instance of 3-SAT, there is a truth assignment that satisfies at least a $7/8$ fraction of all clauses.
+
+- C.The expected number of clauses satisfied by this random assignment is $7k/8$.
+
+- D.If we repeatedly generate random truth assignments until one of them satisfies $\ge 7k/8$ clauses, then this algorithm is a $8/7$-approximation algorithm.
+
+**R2-2** If we repeatedly perform independent trials of an experiment, each of which succeeds with probability $p>0$, then the expected number of trials we need to perform until the first success is:
+
+- A.$p/(1-p)$
+
+- B.$1/p$
+
+- C.$1/(1-p)$
+
+- D.None of the above
+
+## Week 14
+
+**R1-1** In Work-Depth presentation, each time unit consists of a sequence of instructions to be performed concurrently; the sequence of instructions may include any number.
+
+- T
+
+- F
+
+**R1-2** If we translate a serial algorithm into a reasonably efficient parallel algorithm, the work load and the worst-case running time are usually reduced.   
+
+- T
+
+- F
+
+**R1-3** CRCW allows concurrent access for both reads and writes.
+
+- T
+
+- F
+
+**R1-4** CREW allows concurrent access for reads but not for writes.
+
+- T
+
+- F
+
+**R1-5** EREW does not allow simultaneous access by more than one processor to the same memory location for read or write purposes.
+
+- T
+
+- F

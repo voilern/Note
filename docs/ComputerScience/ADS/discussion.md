@@ -142,3 +142,45 @@ _As long as there is an edge whose endpoints are unmatched, add it to the curren
 - (b) Let M and M′ be matchings in a bipartite graph G. Suppose that ∣M′∣>2∣M∣. Show that there is an edge e′ in M′ such that (M∪e′) is a matching in G.
 
 - \(c) Use (b) to conclude that any locally optimal matching returned by the gradient ascent algorithm in a bipartite graph G is at least half as large as a maximum matching in G.
+
+## Week 13
+
+**1-1** A Las Vegas algorithm is a randomized algorithm that always gives the correct result, however the runtime of a Las Vegas algorithm differs depending on the input. 
+
+A Monte Carlo algorithm is a randomized algorithm whose output may be incorrect with a certain (typically small) probability. The running time for the algorithm is fixed however.
+
+Which one is better?
+
+What is the relationship between them?
+
+**1-2** Let's consider the **Randomized Quicksort** where each pivot is randomly chosen from the subsequence. The following is the pseudo-code:
+
+```c
+RandQSort( A, L, R ) {
+    if (L < R) {
+        i = random(L, R);
+        swap(A[i], A[R]);
+        p = Partition(A, L, R);
+        RandQSort( A, L, p-1 );
+        RandQSort( A, p+1, R );
+    }
+}
+```
+
+Show that the **expected** running time is O(nlogn) for sorting A[1⋯n].
+
+Hint: `Partition` is called n times. Each call takes a constant time plus the number of comparisons with the pivot. Hence the total run time is O(n+X) where X is the total number of comparisons with the pivots. You need to prove that E[X]=O(nlogn).
+
+**1-3** Given a 3-SAT formula with k clauses, in which each clause has three variables, the **MAX 3-SAT** problem is to find a truth assignment that satisfies as many clauses as possible. A simple randomized algorithm is to flip a coin, and to set each variable true with probability 1/2, independently for each variable.
+
+Prove that the expected number of clauses satisfied is 7k/8. Hence if we repeatedly generate random truth assignments until one of them satisfies ≥7k/8 clauses, then this algorithm is a 8/7-approximation algorithm.
+
+## Week 14
+
+**1-1** Please prove that a parallel algorithm with workload W and depth D can be implemented in W/p+D time using p processors for any p>0.
+
+**1-2** Given a linked list of n elements which are stored in an array A of size n.  Each element, except one (to be called last), has a pointer to its successor in the list; also, each element, except one (to be called first), is the successor of exactly one element in the list. 
+
+Define rank(i) as follows: for each i, rank(i)=0 if next(i)=NIL (or “end-of-list”) and rank(i)=rank(next(i))+1 otherwise. 
+
+The task is to compute rank(i) for every i.  Please design a linear time serial algorithm; and design a parallel algorithm for solving the problem.  Please analyse the complexities.

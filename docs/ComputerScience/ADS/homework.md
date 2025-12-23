@@ -870,3 +870,163 @@ Local search: Start by assigning jobs $1, \ldots, n/2$ to $M_1$, and the rest to
 - C.Upon the termination of the algorithm, the algorithm returns a cut $(A, B)$ so that $2 w(A, B) \ge  w(A^*, B^*)$.
 
 - D.The algorithm terminates after at most $O(|V|^2)$ flips.
+
+## Homework 13
+
+**1-1** Let $a = (a_1, a_2, \ldots, a_i, \ldots, a_j, \ldots, a_n)$ denote the list of elements we want to sort. In the quicksort algorithm, if the pivot is selected uniformly at random. Then any two elements get compared at most once and the probability of $a_i$ and $a_j$ being compared is $2/(j-i+1)$ for $j > i$, given that $a_i$ or $a_j$ is selected as the pivot. 
+
+- T
+
+- F
+
+**1-2** Reviewing the randomized QuickSort in our course, we always select a central splitter as a pivot before recursions, make sure that each side contains at least $n/4$ elements. Hence, differing from the deterministic QuickSort, the worst case expected running time of the randomized QuickSort is $\Theta (N log N)$.   
+
+- T
+
+- F
+
+**2-1** Given a linked list containg $N$ nodes.  Our task is to remove all the nodes. At each step, we randomly choose one node in the current list, then delete the selected node together with all the nodes after it. Here we assume that each time we choose one node uniformly among all the remaining nodes. What is the expected number of steps to remove all the nodes?
+
+- A.$\Theta (log N)$
+
+- B.$N/e$
+
+- C.$N/2$
+
+- D.$\sqrt N$
+
+**2-2** The Online Hiring Algorithm ( hire only once ) is described as the following:
+
+```c
+int OnlineHiring ( EventType C[ ], int N, int k )
+{
+    int Best = N;
+    int BestQ = -INFINITY ;
+    for ( i=1; i<=k; i++ ) {
+        Qi = interview( i );
+        if ( Qi > BestQ )   BestQ = Qi;
+    }
+    for ( i=k+1; i<=N; i++ ) {
+        Qi = interview( i );
+        if ( Qi > BestQ ) {
+            Best = i;
+            break;
+        }
+    }
+    return Best;
+}
+```
+
+Assume that the quality input C[ ] is uniformly random.When $N$ = 271 and $k$ = 90,  the probability of hiring the $N$th candidate is__.
+
+- A.1/$e$
+
+- B.1/$N$
+
+- C.1/3
+
+- D.1/$k$
+
+## Homework 14
+
+**1-1** While comparing a serial algorithm with its parallel counterpart, we just concentrate on reducing the work load.   
+
+- T
+
+- F
+
+**1-2** To evaluate the Prefix-Sums of a sequence of 16 numbers by the parallel algorithm with Balanced Binary Trees, C(4,1) is found before C(2,2).
+
+- T
+
+- F
+
+**1-3** To evaluate the sum of a sequence of 16 numbers by the parallel algorithm with Balanced Binary Trees, B(1,6) is found before B(2,1).
+
+- T
+
+- F
+
+**1-4** In order to solve  the maximum finding problem by a parallel  algorithm  with $T(n) = O(1)$ , we need work load $W(n) = \Omega ( n^2 )$ in return.
+
+- T
+
+- F
+
+**1-5** To solve the Maximum Finding problem with parallel Random Sampling method, $O(n)$ processors are required to get $T(n) = O(1)$ and $W(n) = O(n)$ with very high probability.   
+
+- T
+
+- F
+
+**2-1** The prefix-min problem is to find for each $i$, $1 \le i \le n$, the smallest element among $A(1)$, $A(2)$, $\cdots$, $A(i)$.  What is the run time and work load for the following algorithm?
+
+```c
+for i, 1≤i≤n pardo
+  B(0, i) = A(i)
+for h=1 to log(n)
+  for i, 1≤i≤n/2^h pardo
+    B(h, i) = min {B(h-1, 2i-1), B(h-1, 2i)}
+for h=log(n) to 0
+  for i even, 1≤i≤n/2^h pardo
+    C(h, i) = C(h+1, i/2)
+  for i=1 pardo
+    C(h, 1) = B(h, 1)
+  for i odd, 3≤i≤n/2^h pardo
+    C(h, i) = min {C(h + 1, (i - 1)/2), B(h, i)}
+for i, 1≤i≤n pardo
+  Output C(0, i)
+```
+
+- A.$O(n)$, $O(n)$
+
+- B.$O(log n)$, $O(log n)$
+
+- C.$O(log n)$, $O(n)$
+
+- D.$O(n)$, $O(lof n)$
+
+**2-2** Which one of the following statements about the Maximum Finding problem is true?
+
+- A.There exists a serial algorithm with time complexity being $O(logN)$.
+
+- B.No parallel algorithm can solve the problem in $O(1)$ time.
+
+- C.When partitioning the problem into sub-problems and solving them in parallel, compared with $\sqrt N$, choosing $log log N$ as the size of each sub-problem can reduce the work load and the worst-case time complexity.
+
+- D.Parallel random sampling algorithm can run in $O(1)$ time and $O(N)$ work with very high probability.
+
+**2-3** Sorting-by-merging is a classic serial algorithm.  It can be translated directly into a reasonably efficient parallel algorithm. A recursive description follows.
+
+MERGE−SORT( A(1), A(2), ..., A(n); B(1), B(2), ..., B(n) )
+
+Assume that $n = 2^l$ for some integer $l \ge 0$
+
+if n = 1 then return B(1) := A(1)
+
+else call, in parallel, MERGE−SORT( A(1), ..., A(n/2); C(1), ..., C(n/2) ) and
+
+- MERGE−SORT(A(n/2+1), ..., A(n); C(n/2+1), ..., C(n) )
+
+- Merge (C(1),...C(n/2)) and (C(n/2 + 1),...,C(n)) into (B(1), B(2), ..., B(n))
+
+Then the MERGE−SORT runs in __ .
+
+- A.$O(n\log n)$ work and $O(\log^2n)$ time
+
+- B.$O(n\log n)$ work and $O(\log n)$ time
+
+- C.$O(n\log^2 n)$ work and $O(\log^2n)$ time
+
+- D.$O(n\log^2 n)$ work and $O(\log n)$ time
+
+**2-4** Which one of the following statements about the Ranking problem is true? (Assume that both arrays contain $N$ elements.)
+
+- A.There exists a serial algorithm with time complexity being $O(logN)$.
+
+- B.Parallel binary search algorithm can solve the problem in $O(1)$ time.
+
+- C.When partitioning the problem into sub-problems and solving them in parallel, choosing $log log N$ as the size of each sub-problem can reduce the work load and the worst-case time complexity to $O(logN)$.
+
+- D.There is a parallel algorithm that can run in $O(logN)$ time and $O(N)$ work.
+
